@@ -1,0 +1,463 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2319B2B4245F601B00EEAF84 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2319B2B3245F601B00EEAF84 /* AppDelegate.swift */; };
+		2319B2B6245F601B00EEAF84 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2319B2B5245F601B00EEAF84 /* SceneDelegate.swift */; };
+		2319B2B8245F601B00EEAF84 /* SWSearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2319B2B7245F601B00EEAF84 /* SWSearchCollectionViewController.swift */; };
+		2319B2BB245F601B00EEAF84 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2319B2B9245F601B00EEAF84 /* Main.storyboard */; };
+		2319B2BD245F601C00EEAF84 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2319B2BC245F601C00EEAF84 /* Assets.xcassets */; };
+		2319B2C0245F601C00EEAF84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2319B2BE245F601C00EEAF84 /* LaunchScreen.storyboard */; };
+		2319B2C9245F643700EEAF84 /* SWEntityCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2319B2C7245F643700EEAF84 /* SWEntityCollectionViewCell.swift */; };
+		2319B2CA245F643700EEAF84 /* SWEntityCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2319B2C8245F643700EEAF84 /* SWEntityCollectionViewCell.xib */; };
+		23EB8D38245F9A4E00686529 /* STJEDISE.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 23EB8D23245F9A4E00686529 /* STJEDISE.TTF */; };
+		23EB8D3A245F9A4E00686529 /* Strjmono.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 23EB8D26245F9A4E00686529 /* Strjmono.ttf */; };
+		23EB8D3C245F9A4E00686529 /* Stjldbl2.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 23EB8D28245F9A4E00686529 /* Stjldbl2.ttf */; };
+		23EB8D4A245F9D3D00686529 /* SWSearchCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EB8D49245F9D3D00686529 /* SWSearchCollectionViewDataSource.swift */; };
+		23EB8D4D245FA03A00686529 /* SWCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EB8D4C245FA03A00686529 /* SWCategory.swift */; };
+		23EB8D4F245FA30F00686529 /* SWSearchCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EB8D4E245FA30F00686529 /* SWSearchCollectionViewFlowLayout.swift */; };
+		23EB8D51245FBE4D00686529 /* UIColor+Random.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EB8D50245FBE4D00686529 /* UIColor+Random.swift */; };
+		23EB8D55245FE3F700686529 /* SWCategorySearchCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EB8D53245FE3F700686529 /* SWCategorySearchCollectionViewController.swift */; };
+		23EB8D56245FE3F700686529 /* SWCategorySearchCollectionViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 23EB8D54245FE3F700686529 /* SWCategorySearchCollectionViewController.xib */; };
+		23EB8D58245FE44B00686529 /* SWDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EB8D57245FE44B00686529 /* SWDetailsTableViewController.swift */; };
+		23EB8D5B245FF31500686529 /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EB8D5A245FF31500686529 /* People.swift */; };
+		23EB8D5D245FF4F500686529 /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EB8D5C245FF4F500686529 /* Film.swift */; };
+		23EB8D5F245FF8AB00686529 /* Species.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EB8D5E245FF8AB00686529 /* Species.swift */; };
+		23EB8D61245FF8B600686529 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EB8D60245FF8B600686529 /* Planet.swift */; };
+		23EB8D63245FF8E100686529 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EB8D62245FF8E100686529 /* Vehicle.swift */; };
+		23EB8D65245FF8FE00686529 /* Starship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EB8D64245FF8FE00686529 /* Starship.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2319B2B0245F601B00EEAF84 /* RogueOne.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RogueOne.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2319B2B3245F601B00EEAF84 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2319B2B5245F601B00EEAF84 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		2319B2B7245F601B00EEAF84 /* SWSearchCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWSearchCollectionViewController.swift; sourceTree = "<group>"; };
+		2319B2BA245F601B00EEAF84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2319B2BC245F601C00EEAF84 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2319B2BF245F601C00EEAF84 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2319B2C1245F601C00EEAF84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2319B2C7245F643700EEAF84 /* SWEntityCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SWEntityCollectionViewCell.swift; path = Views/SWEntityCollectionViewCell.swift; sourceTree = "<group>"; };
+		2319B2C8245F643700EEAF84 /* SWEntityCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SWEntityCollectionViewCell.xib; path = Views/SWEntityCollectionViewCell.xib; sourceTree = "<group>"; };
+		23EB8D23245F9A4E00686529 /* STJEDISE.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = STJEDISE.TTF; sourceTree = "<group>"; };
+		23EB8D26245F9A4E00686529 /* Strjmono.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Strjmono.ttf; sourceTree = "<group>"; };
+		23EB8D28245F9A4E00686529 /* Stjldbl2.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Stjldbl2.ttf; sourceTree = "<group>"; };
+		23EB8D49245F9D3D00686529 /* SWSearchCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWSearchCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		23EB8D4C245FA03A00686529 /* SWCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWCategory.swift; sourceTree = "<group>"; };
+		23EB8D4E245FA30F00686529 /* SWSearchCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWSearchCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
+		23EB8D50245FBE4D00686529 /* UIColor+Random.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Random.swift"; sourceTree = "<group>"; };
+		23EB8D53245FE3F700686529 /* SWCategorySearchCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWCategorySearchCollectionViewController.swift; sourceTree = "<group>"; };
+		23EB8D54245FE3F700686529 /* SWCategorySearchCollectionViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SWCategorySearchCollectionViewController.xib; sourceTree = "<group>"; };
+		23EB8D57245FE44B00686529 /* SWDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWDetailsTableViewController.swift; sourceTree = "<group>"; };
+		23EB8D5A245FF31500686529 /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
+		23EB8D5C245FF4F500686529 /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
+		23EB8D5E245FF8AB00686529 /* Species.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Species.swift; sourceTree = "<group>"; };
+		23EB8D60245FF8B600686529 /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
+		23EB8D62245FF8E100686529 /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
+		23EB8D64245FF8FE00686529 /* Starship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Starship.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2319B2AD245F601B00EEAF84 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2319B2A7245F601B00EEAF84 = {
+			isa = PBXGroup;
+			children = (
+				2319B2B2245F601B00EEAF84 /* RogueOne */,
+				2319B2B1245F601B00EEAF84 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2319B2B1245F601B00EEAF84 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2319B2B0245F601B00EEAF84 /* RogueOne.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2319B2B2245F601B00EEAF84 /* RogueOne */ = {
+			isa = PBXGroup;
+			children = (
+				23EB8D59245FF30100686529 /* Model */,
+				23EB8D52245FE2AC00686529 /* Category Search  */,
+				23EB8D1F245F9A3D00686529 /* Fonts */,
+				2319B2B3245F601B00EEAF84 /* AppDelegate.swift */,
+				2319B2B5245F601B00EEAF84 /* SceneDelegate.swift */,
+				23EB8D4E245FA30F00686529 /* SWSearchCollectionViewFlowLayout.swift */,
+				2319B2B7245F601B00EEAF84 /* SWSearchCollectionViewController.swift */,
+				2319B2B9245F601B00EEAF84 /* Main.storyboard */,
+				2319B2BC245F601C00EEAF84 /* Assets.xcassets */,
+				2319B2BE245F601C00EEAF84 /* LaunchScreen.storyboard */,
+				2319B2C1245F601C00EEAF84 /* Info.plist */,
+				2319B2C7245F643700EEAF84 /* SWEntityCollectionViewCell.swift */,
+				2319B2C8245F643700EEAF84 /* SWEntityCollectionViewCell.xib */,
+				23EB8D49245F9D3D00686529 /* SWSearchCollectionViewDataSource.swift */,
+				23EB8D4C245FA03A00686529 /* SWCategory.swift */,
+			);
+			path = RogueOne;
+			sourceTree = "<group>";
+		};
+		23EB8D1F245F9A3D00686529 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				23EB8D20245F9A4E00686529 /* star_jedi */,
+				23EB8D50245FBE4D00686529 /* UIColor+Random.swift */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		23EB8D20245F9A4E00686529 /* star_jedi */ = {
+			isa = PBXGroup;
+			children = (
+				23EB8D21245F9A4E00686529 /* stjedise */,
+				23EB8D25245F9A4E00686529 /* stjelogo */,
+			);
+			path = star_jedi;
+			sourceTree = "<group>";
+		};
+		23EB8D21245F9A4E00686529 /* stjedise */ = {
+			isa = PBXGroup;
+			children = (
+				23EB8D23245F9A4E00686529 /* STJEDISE.TTF */,
+			);
+			path = stjedise;
+			sourceTree = "<group>";
+		};
+		23EB8D25245F9A4E00686529 /* stjelogo */ = {
+			isa = PBXGroup;
+			children = (
+				23EB8D26245F9A4E00686529 /* Strjmono.ttf */,
+				23EB8D28245F9A4E00686529 /* Stjldbl2.ttf */,
+			);
+			path = stjelogo;
+			sourceTree = "<group>";
+		};
+		23EB8D52245FE2AC00686529 /* Category Search  */ = {
+			isa = PBXGroup;
+			children = (
+				23EB8D53245FE3F700686529 /* SWCategorySearchCollectionViewController.swift */,
+				23EB8D54245FE3F700686529 /* SWCategorySearchCollectionViewController.xib */,
+				23EB8D57245FE44B00686529 /* SWDetailsTableViewController.swift */,
+			);
+			path = "Category Search ";
+			sourceTree = "<group>";
+		};
+		23EB8D59245FF30100686529 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				23EB8D5A245FF31500686529 /* People.swift */,
+				23EB8D5C245FF4F500686529 /* Film.swift */,
+				23EB8D5E245FF8AB00686529 /* Species.swift */,
+				23EB8D60245FF8B600686529 /* Planet.swift */,
+				23EB8D62245FF8E100686529 /* Vehicle.swift */,
+				23EB8D64245FF8FE00686529 /* Starship.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2319B2AF245F601B00EEAF84 /* RogueOne */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2319B2C4245F601C00EEAF84 /* Build configuration list for PBXNativeTarget "RogueOne" */;
+			buildPhases = (
+				2319B2AC245F601B00EEAF84 /* Sources */,
+				2319B2AD245F601B00EEAF84 /* Frameworks */,
+				2319B2AE245F601B00EEAF84 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RogueOne;
+			productName = BabyYoda;
+			productReference = 2319B2B0245F601B00EEAF84 /* RogueOne.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2319B2A8245F601B00EEAF84 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1140;
+				LastUpgradeCheck = 1140;
+				ORGANIZATIONNAME = "Dhaval Shah";
+				TargetAttributes = {
+					2319B2AF245F601B00EEAF84 = {
+						CreatedOnToolsVersion = 11.4.1;
+					};
+				};
+			};
+			buildConfigurationList = 2319B2AB245F601B00EEAF84 /* Build configuration list for PBXProject "RogueOne" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2319B2A7245F601B00EEAF84;
+			productRefGroup = 2319B2B1245F601B00EEAF84 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2319B2AF245F601B00EEAF84 /* RogueOne */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2319B2AE245F601B00EEAF84 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2319B2C0245F601C00EEAF84 /* LaunchScreen.storyboard in Resources */,
+				23EB8D38245F9A4E00686529 /* STJEDISE.TTF in Resources */,
+				2319B2CA245F643700EEAF84 /* SWEntityCollectionViewCell.xib in Resources */,
+				23EB8D3C245F9A4E00686529 /* Stjldbl2.ttf in Resources */,
+				23EB8D3A245F9A4E00686529 /* Strjmono.ttf in Resources */,
+				2319B2BD245F601C00EEAF84 /* Assets.xcassets in Resources */,
+				23EB8D56245FE3F700686529 /* SWCategorySearchCollectionViewController.xib in Resources */,
+				2319B2BB245F601B00EEAF84 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2319B2AC245F601B00EEAF84 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				23EB8D51245FBE4D00686529 /* UIColor+Random.swift in Sources */,
+				23EB8D5D245FF4F500686529 /* Film.swift in Sources */,
+				23EB8D55245FE3F700686529 /* SWCategorySearchCollectionViewController.swift in Sources */,
+				23EB8D63245FF8E100686529 /* Vehicle.swift in Sources */,
+				23EB8D58245FE44B00686529 /* SWDetailsTableViewController.swift in Sources */,
+				2319B2B8245F601B00EEAF84 /* SWSearchCollectionViewController.swift in Sources */,
+				23EB8D4F245FA30F00686529 /* SWSearchCollectionViewFlowLayout.swift in Sources */,
+				23EB8D65245FF8FE00686529 /* Starship.swift in Sources */,
+				23EB8D5F245FF8AB00686529 /* Species.swift in Sources */,
+				23EB8D4D245FA03A00686529 /* SWCategory.swift in Sources */,
+				23EB8D4A245F9D3D00686529 /* SWSearchCollectionViewDataSource.swift in Sources */,
+				23EB8D5B245FF31500686529 /* People.swift in Sources */,
+				2319B2B4245F601B00EEAF84 /* AppDelegate.swift in Sources */,
+				23EB8D61245FF8B600686529 /* Planet.swift in Sources */,
+				2319B2C9245F643700EEAF84 /* SWEntityCollectionViewCell.swift in Sources */,
+				2319B2B6245F601B00EEAF84 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2319B2B9245F601B00EEAF84 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2319B2BA245F601B00EEAF84 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2319B2BE245F601C00EEAF84 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2319B2BF245F601C00EEAF84 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2319B2C2245F601C00EEAF84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2319B2C3245F601C00EEAF84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2319B2C5245F601C00EEAF84 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5R73FDPJGP;
+				INFOPLIST_FILE = "$(SRCROOT)/RogueOne/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.personal.rogueOne;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2319B2C6245F601C00EEAF84 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 5R73FDPJGP;
+				INFOPLIST_FILE = "$(SRCROOT)/RogueOne/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.personal.rogueOne;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2319B2AB245F601B00EEAF84 /* Build configuration list for PBXProject "RogueOne" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2319B2C2245F601C00EEAF84 /* Debug */,
+				2319B2C3245F601C00EEAF84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2319B2C4245F601C00EEAF84 /* Build configuration list for PBXNativeTarget "RogueOne" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2319B2C5245F601C00EEAF84 /* Debug */,
+				2319B2C6245F601C00EEAF84 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2319B2A8245F601B00EEAF84 /* Project object */;
+}
