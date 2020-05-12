@@ -34,7 +34,7 @@
         <!--Star Wars-->
         <scene sceneID="pNi-HE-pWQ">
             <objects>
-                <collectionViewController title="Star Wars" id="L34-eX-eTX" customClass="SWSearchCollectionViewController" customModule="BabyYoda" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController title="Star Wars" id="L34-eX-eTX" customClass="SWAllCategoryCollectionViewController" customModule="RogueOne" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" id="Ui4-Gs-Ms1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -46,7 +46,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SWEntityCollectionViewCell" id="P0R-6t-cGX">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SWCategoryCollectionViewCell" id="P0R-6t-cGX">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="1St-jA-cBr">
