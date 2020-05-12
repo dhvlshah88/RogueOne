@@ -1,45 +1,50 @@
 //
-//  SWCategoriesCollectionViewDataSource.swift
-//  BabyYoda
+//  SWEntitiesCollectionViewDataSource.swift
+//  RogueOne
 //
-//  Created by Dhaval Shah on 5/3/20.
-//  Copyright © 2020 Dhaval Shah. All rights reserved.
 //
 
 import UIKit
 
-protocol SWSearchCollectionViewDataSourceDelegate: class {
-  func presentCategorySearchViewController(_ category: SWCategory)
+protocol SWEntitiesCollectionViewDataSourceDelegate: class {
+  func presentSelectedEntityViewController(type: SWEntityType,
+                                           entity: SWEntity,
+                                           cacheManager: CacheManager)
+  func searchComplete()
 }
 
-class SWCategoriesCollectionViewDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class SWEntitiesCollectionViewDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
   private let sectionInsets = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
   private let itemSpacing: CGFloat = 10.0
+  
+  var searchActive : Bool = false
+  private let type: SWEntityType
+  private(set) var cacheManager: CacheManager
+  weak var delegate: SWEntitiesCollectionViewDataSourceDelegate?
 
-  let searchCategories = SWCategory.allCases
-  private(set) var selectedCategory: SWCategory?
-  private weak var delegate: SWSearchCollectionViewDataSourceDelegate?
-
-  init(delegate: SWSearchCollectionViewDataSourceDelegate? = nil) {
+  init(type: SWEntityType,
+       delegate: SWEntitiesCollectionViewDataSourceDelegate,
+       cacheManager: CacheManager) {
+    self.type = type
     self.delegate = delegate
+    self.cacheManager = cacheManager
   }
 
+  func getEntities(_ completion: @escaping BoolClosure) {
+    fatalError("Abstract method!! Override to fetch your desired entity.")
+  }
+
+  // Mark: UICollectionViewDataSource
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return searchCategories.count
+    return 0
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    guard let swEntityCell = collectionView.dequeueReusableCell(withReuseIdentifier: SWEntityCollectionViewCell.reuseIdentifier, for: indexPath) as? SWEntityCollectionViewCell else {
-      return UICollectionViewCell()
-    }
-    let category = searchCategories[indexPath.row]
-    swEntityCell.configure(category)
-    return swEntityCell
+    return UICollectionViewCell()
   }
 
+  // Mark: UICollectionViewDelegate
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    let selectedCategory = searchCategories[indexPath.row]
-    delegate?.presentCategorySearchViewController(selectedCategory)
   }
 
   // Mark: UICollectionViewDelegateFlowLayout
@@ -66,4 +71,12 @@ class SWCategoriesCollectionViewDataSource: NSObject, UICollectionViewDataSource
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
     return itemSpacing
   }
+}
+
+extension SWEntitiesCollectionViewDataSource: UISearchResultsUpdating {
+
+  func updateSearchResults(for searchController: UISearchController)
+  {
+  }
+
 }

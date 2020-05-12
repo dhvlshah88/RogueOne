@@ -1,45 +1,41 @@
 //
-//  SWCategoriesCollectionViewDataSource.swift
-//  BabyYoda
+//  SWAllCategoryCollectionViewDataSource.swift
+//  RogueOne
 //
-//  Created by Dhaval Shah on 5/3/20.
-//  Copyright © 2020 Dhaval Shah. All rights reserved.
 //
 
 import UIKit
 
-protocol SWSearchCollectionViewDataSourceDelegate: class {
-  func presentCategorySearchViewController(_ category: SWCategory)
+protocol SWAllCategoryCollectionViewDataSourceDelegate: class {
+  func presentSelectedCategoryViewController(_ categoryType: SWEntityType)
 }
 
-class SWCategoriesCollectionViewDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+class SWAllCategoryCollectionViewDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
   private let sectionInsets = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
   private let itemSpacing: CGFloat = 10.0
 
-  let searchCategories = SWCategory.allCases
-  private(set) var selectedCategory: SWCategory?
-  private weak var delegate: SWSearchCollectionViewDataSourceDelegate?
+  let swCategories = SWEntityType.allCases
+  private weak var delegate: SWAllCategoryCollectionViewDataSourceDelegate?
 
-  init(delegate: SWSearchCollectionViewDataSourceDelegate? = nil) {
+  init(delegate: SWAllCategoryCollectionViewDataSourceDelegate? = nil) {
     self.delegate = delegate
   }
 
   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    return searchCategories.count
+    return swCategories.count
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    guard let swEntityCell = collectionView.dequeueReusableCell(withReuseIdentifier: SWEntityCollectionViewCell.reuseIdentifier, for: indexPath) as? SWEntityCollectionViewCell else {
+    guard let swEntityCell = collectionView.dequeueReusableCell(withReuseIdentifier: SWCategoryCollectionViewCell.reuseIdentifier, for: indexPath) as? SWCategoryCollectionViewCell else {
       return UICollectionViewCell()
     }
-    let category = searchCategories[indexPath.row]
-    swEntityCell.configure(category)
+    let category = swCategories[indexPath.row]
+    swEntityCell.configureTitle(category.rawValue)
     return swEntityCell
   }
 
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    let selectedCategory = searchCategories[indexPath.row]
-    delegate?.presentCategorySearchViewController(selectedCategory)
+    delegate?.presentSelectedCategoryViewController(swCategories[indexPath.row])
   }
 
   // Mark: UICollectionViewDelegateFlowLayout
