@@ -66,10 +66,13 @@
 		23F5B67E2460EF0F00A5FE6C /* SWWebServiceCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F5B6742460EF0F00A5FE6C /* SWWebServiceCaller.swift */; };
 		23F5B68224615A7800A5FE6C /* ResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F5B68124615A7800A5FE6C /* ResponseSerializer.swift */; };
 		23F5B6842462695100A5FE6C /* SWEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F5B6832462695100A5FE6C /* SWEntity.swift */; };
+		7F0B1054C0C22BB0C8CF9496 /* Pods_RogueOne.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 613D53EFF22046EAD9293CB9 /* Pods_RogueOne.framework */; };
 		7F4074E6246F39D4006AC6D2 /* StarshipTypeCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4074E5246F39D4006AC6D2 /* StarshipTypeCollectionViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1024548505645B8ED4B2D0F4 /* Pods-RogueOne.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RogueOne.debug.xcconfig"; path = "Target Support Files/Pods-RogueOne/Pods-RogueOne.debug.xcconfig"; sourceTree = "<group>"; };
+		2273F128819538D801EB1C18 /* Pods-RogueOne.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RogueOne.release.xcconfig"; path = "Target Support Files/Pods-RogueOne/Pods-RogueOne.release.xcconfig"; sourceTree = "<group>"; };
 		230B060A246F30D400F5F8CB /* GetVehiclesWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetVehiclesWorker.swift; sourceTree = "<group>"; };
 		230B060C246F310100F5F8CB /* GelFilmsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GelFilmsWorker.swift; sourceTree = "<group>"; };
 		230B060E246F313400F5F8CB /* GetPlanetsWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlanetsWorker.swift; sourceTree = "<group>"; };
@@ -132,6 +135,7 @@
 		23F5B6742460EF0F00A5FE6C /* SWWebServiceCaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWWebServiceCaller.swift; sourceTree = "<group>"; };
 		23F5B68124615A7800A5FE6C /* ResponseSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseSerializer.swift; sourceTree = "<group>"; };
 		23F5B6832462695100A5FE6C /* SWEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWEntity.swift; sourceTree = "<group>"; };
+		613D53EFF22046EAD9293CB9 /* Pods_RogueOne.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RogueOne.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F4074E5246F39D4006AC6D2 /* StarshipTypeCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipTypeCollectionViewDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,6 +144,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F0B1054C0C22BB0C8CF9496 /* Pods_RogueOne.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +177,8 @@
 				23A4DCC52468B7E0001FEB66 /* TODO.md */,
 				2319B2B2245F601B00EEAF84 /* RogueOne */,
 				2319B2B1245F601B00EEAF84 /* Products */,
+				E1393E374F25D24B8843FE8C /* Pods */,
+				8A0CEFDE2FE106B1266AB025 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -344,6 +351,24 @@
 			path = Webservice/Base;
 			sourceTree = "<group>";
 		};
+		8A0CEFDE2FE106B1266AB025 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				613D53EFF22046EAD9293CB9 /* Pods_RogueOne.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E1393E374F25D24B8843FE8C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1024548505645B8ED4B2D0F4 /* Pods-RogueOne.debug.xcconfig */,
+				2273F128819538D801EB1C18 /* Pods-RogueOne.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -351,9 +376,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2319B2C4245F601C00EEAF84 /* Build configuration list for PBXNativeTarget "RogueOne" */;
 			buildPhases = (
+				2CBB082E723F2A833C5EA22C /* [CP] Check Pods Manifest.lock */,
 				2319B2AC245F601B00EEAF84 /* Sources */,
 				2319B2AD245F601B00EEAF84 /* Frameworks */,
 				2319B2AE245F601B00EEAF84 /* Resources */,
+				C658F77ADA97994C09708E71 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -416,6 +443,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2CBB082E723F2A833C5EA22C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RogueOne-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C658F77ADA97994C09708E71 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RogueOne/Pods-RogueOne-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RogueOne/Pods-RogueOne-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RogueOne/Pods-RogueOne-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2319B2AC245F601B00EEAF84 /* Sources */ = {
@@ -613,6 +682,7 @@
 		};
 		2319B2C5245F601C00EEAF84 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1024548505645B8ED4B2D0F4 /* Pods-RogueOne.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -631,6 +701,7 @@
 		};
 		2319B2C6245F601C00EEAF84 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2273F128819538D801EB1C18 /* Pods-RogueOne.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
