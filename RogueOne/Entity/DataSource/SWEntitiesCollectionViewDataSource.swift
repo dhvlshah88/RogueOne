@@ -53,6 +53,7 @@ class SWEntitiesCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
                             return
                         }
                         strongSelf.entities = result
+                        //TO-DO - Add to entities to cache for reduce api traffic.
                         completion(true)
       },
                        failure: { (error) in
