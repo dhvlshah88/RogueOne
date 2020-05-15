@@ -1,16 +1,15 @@
 //
-//  SWSearchCollectionViewController.swift
+//  SWCategoriesCollectionViewController.swift
 //  BabyYoda
 //
 //
 
 import UIKit
 
-class SWSearchCollectionViewController: UICollectionViewController {
+class SWCategoriesCollectionViewController: UICollectionViewController {
 
   private var selectedCategories: SWCategory?
-  private lazy var swSearchCollectionDataSource = SWSearchCollectionViewDataSource(self)
-  private var swSearchCollectionFlowLayout = SWSearchCollectionViewFlowLayout()
+  private lazy var swSearchCollectionDataSource = SWSearchCollectionViewDataSource(delegate: self)
   private var swCategorySearchViewController: SWCategorySearchCollectionViewController?
 
   override func viewDidLoad() {
@@ -22,7 +21,7 @@ class SWSearchCollectionViewController: UICollectionViewController {
   private func configureCollectionView() {
     collectionView.delegate = swSearchCollectionDataSource
     collectionView.dataSource = swSearchCollectionDataSource
-    collectionView.collectionViewLayout = swSearchCollectionFlowLayout
+    collectionView.collectionViewLayout = UICollectionViewFlowLayout()
     collectionView.backgroundColor = .lightGray
 
     let cellNib = UINib(nibName: SWEntityCollectionViewCell.reuseIdentifier, bundle: nil)
@@ -30,7 +29,7 @@ class SWSearchCollectionViewController: UICollectionViewController {
   }
 }
 
-extension SWSearchCollectionViewController: SWSearchCollectionViewDataSourceDelegate {
+extension SWCategoriesCollectionViewController: SWSearchCollectionViewDataSourceDelegate {
 
   func presentCategorySearchViewController(_ category: SWCategory) {
     swCategorySearchViewController = SWCategorySearchCollectionViewController(nibName: "SWCategorySearchCollectionViewController", bundle: nil)
