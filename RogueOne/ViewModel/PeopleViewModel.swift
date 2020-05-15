@@ -37,11 +37,11 @@ import Foundation
 protocol ViewModel {
   var title: String { get }
   var body: [String] { get }
-  var relatedViewModel: [SWEntityType: [RelatedEntityViewModel]] { get }
+  var relatedViewModelPerEntityType: [SWEntityType: [RelatedEntityViewModel]] { get }
 }
 
 struct PeopleViewModel: ViewModel {
-  private let heightMetric: Float = 2.54
+  private static let heightMetric: Float = 2.54
   private let people: People
   private let cacheManager: CacheManager
 
@@ -64,7 +64,7 @@ extension PeopleViewModel {
     return body
   }
 
-  var relatedViewModel: [SWEntityType : [RelatedEntityViewModel]] {
+  var relatedViewModelPerEntityType: [SWEntityType : [RelatedEntityViewModel]] {
     return [.films: createFilmRelatedViewModel()]
   }
 

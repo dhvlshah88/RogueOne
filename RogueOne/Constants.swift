@@ -6,7 +6,7 @@
 
 import Foundation
 
-typealias Categories = [SWEntity]
+typealias Entities = [SWEntity]
 typealias Peoples = [People]
 typealias Films = [Film]
 typealias SpeciesArray = [Species]
@@ -17,4 +17,4 @@ typealias PeoplesClosure = (Peoples) -> Void
 typealias FailureClosure = (APIError) -> Void
 typealias BoolClosure = (Bool) -> Void
 typealias VoidClosure = () -> Void
-typealias SWCategoriesClosure = ([SWEntity]) -> Void
+typealias SWCategoriesClosure = (Entities) -> Void

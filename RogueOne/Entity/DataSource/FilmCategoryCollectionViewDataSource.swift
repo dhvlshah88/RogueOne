@@ -1,13 +1,12 @@
 //
-//  FilmCategoryCollectionViewDataSource.swift
+//  FilmTypeCollectionViewDataSource.swift
 //  RogueOne
 //
 //
 
 import UIKit
 
-class FilmCategoryCollectionViewDataSource: SWEntitiesCollectionViewDataSource {
-  private let type: SWEntityType = .films
+class FilmTypeCollectionViewDataSource: SWEntitiesCollectionViewDataSource {
   private let worker: GetFilmsWorker
   private(set) var films: Films = []
 
@@ -15,13 +14,13 @@ class FilmCategoryCollectionViewDataSource: SWEntitiesCollectionViewDataSource {
        delegate: SWEntitiesCollectionViewDataSourceDelegate,
        cacheManager: CacheManager) {
     self.worker = worker as! GetFilmsWorker
-    super.init(type: type,
+    super.init(type: .films,
                delegate: delegate,
                cacheManager: cacheManager)
   }
 
   override func getEntities(_ completion: @escaping BoolClosure) {
-    if let filmsMap = cacheManager.categoryMap[.films], !filmsMap.isEmpty,
+    if let filmsMap = cacheManager.categoryMap[type], !filmsMap.isEmpty,
       let films = Array(filmsMap.values) as? Films {
       self.films = films
       completion(true)

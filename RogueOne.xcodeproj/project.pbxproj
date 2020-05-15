@@ -24,7 +24,7 @@
 		2319B2C0245F601C00EEAF84 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2319B2BE245F601C00EEAF84 /* LaunchScreen.storyboard */; };
 		2319B2C9245F643700EEAF84 /* SWCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2319B2C7245F643700EEAF84 /* SWCategoryCollectionViewCell.swift */; };
 		2319B2CA245F643700EEAF84 /* SWCategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2319B2C8245F643700EEAF84 /* SWCategoryCollectionViewCell.xib */; };
-		2365AE0F2464AEB700112FB2 /* PeopleCategoryCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2365AE0E2464AEB700112FB2 /* PeopleCategoryCollectionViewDataSource.swift */; };
+		2365AE0F2464AEB700112FB2 /* PeopleTypeCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2365AE0E2464AEB700112FB2 /* PeopleTypeCollectionViewDataSource.swift */; };
 		2365AE112464C62000112FB2 /* SWCategoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2365AE102464C62000112FB2 /* SWCategoryResponse.swift */; };
 		2365AE142464DC4B00112FB2 /* GetPeopleEntitiesWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2365AE132464DC4B00112FB2 /* GetPeopleEntitiesWebService.swift */; };
 		2365AE162464DC8000112FB2 /* GetPlanetEntitiesWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2365AE152464DC8000112FB2 /* GetPlanetEntitiesWebService.swift */; };
@@ -34,7 +34,7 @@
 		2365AE1E2464DDDE00112FB2 /* GetFilmEntitiesWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2365AE1D2464DDDE00112FB2 /* GetFilmEntitiesWebService.swift */; };
 		2365AE2024651DDC00112FB2 /* WorkerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2365AE1F24651DDC00112FB2 /* WorkerFactory.swift */; };
 		2365AE222465225900112FB2 /* EntitiesDataSourceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2365AE212465225900112FB2 /* EntitiesDataSourceFactory.swift */; };
-		2365AE2424653E3900112FB2 /* FilmCategoryCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2365AE2324653E3900112FB2 /* FilmCategoryCollectionViewDataSource.swift */; };
+		2365AE2424653E3900112FB2 /* FilmTypeCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2365AE2324653E3900112FB2 /* FilmTypeCollectionViewDataSource.swift */; };
 		2365AE262465415200112FB2 /* PlanetCategoryCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2365AE252465415200112FB2 /* PlanetCategoryCollectionViewDataSource.swift */; };
 		2365AE2924654E4600112FB2 /* SWDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2365AE2824654E4600112FB2 /* SWDetailsViewController.xib */; };
 		2365AE2C2465ECF700112FB2 /* PeopleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2365AE2B2465ECF700112FB2 /* PeopleViewModel.swift */; };
@@ -55,7 +55,7 @@
 		23EB8D61245FF8B600686529 /* Planet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EB8D60245FF8B600686529 /* Planet.swift */; };
 		23EB8D63245FF8E100686529 /* Vehicle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EB8D62245FF8E100686529 /* Vehicle.swift */; };
 		23EB8D65245FF8FE00686529 /* Starship.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EB8D64245FF8FE00686529 /* Starship.swift */; };
-		23F5B6672460DCA600A5FE6C /* SWCategoryCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F5B6662460DCA600A5FE6C /* SWCategoryCollectionViewDataSource.swift */; };
+		23F5B6672460DCA600A5FE6C /* SWEntitiesCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F5B6662460DCA600A5FE6C /* SWEntitiesCollectionViewDataSource.swift */; };
 		23F5B6772460EF0F00A5FE6C /* SWCategoriesWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F5B66C2460EF0F00A5FE6C /* SWCategoriesWebService.swift */; };
 		23F5B6782460EF0F00A5FE6C /* HTTPConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F5B66E2460EF0F00A5FE6C /* HTTPConstants.swift */; };
 		23F5B6792460EF0F00A5FE6C /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F5B66F2460EF0F00A5FE6C /* APIError.swift */; };
@@ -66,6 +66,7 @@
 		23F5B67E2460EF0F00A5FE6C /* SWWebServiceCaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F5B6742460EF0F00A5FE6C /* SWWebServiceCaller.swift */; };
 		23F5B68224615A7800A5FE6C /* ResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F5B68124615A7800A5FE6C /* ResponseSerializer.swift */; };
 		23F5B6842462695100A5FE6C /* SWEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23F5B6832462695100A5FE6C /* SWEntity.swift */; };
+		7F4074E6246F39D4006AC6D2 /* StarshipTypeCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F4074E5246F39D4006AC6D2 /* StarshipTypeCollectionViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,7 +89,7 @@
 		2319B2C1245F601C00EEAF84 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2319B2C7245F643700EEAF84 /* SWCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		2319B2C8245F643700EEAF84 /* SWCategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SWCategoryCollectionViewCell.xib; sourceTree = "<group>"; };
-		2365AE0E2464AEB700112FB2 /* PeopleCategoryCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleCategoryCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		2365AE0E2464AEB700112FB2 /* PeopleTypeCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleTypeCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		2365AE102464C62000112FB2 /* SWCategoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWCategoryResponse.swift; sourceTree = "<group>"; };
 		2365AE132464DC4B00112FB2 /* GetPeopleEntitiesWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPeopleEntitiesWebService.swift; sourceTree = "<group>"; };
 		2365AE152464DC8000112FB2 /* GetPlanetEntitiesWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlanetEntitiesWebService.swift; sourceTree = "<group>"; };
@@ -98,7 +99,7 @@
 		2365AE1D2464DDDE00112FB2 /* GetFilmEntitiesWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFilmEntitiesWebService.swift; sourceTree = "<group>"; };
 		2365AE1F24651DDC00112FB2 /* WorkerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkerFactory.swift; sourceTree = "<group>"; };
 		2365AE212465225900112FB2 /* EntitiesDataSourceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntitiesDataSourceFactory.swift; sourceTree = "<group>"; };
-		2365AE2324653E3900112FB2 /* FilmCategoryCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmCategoryCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		2365AE2324653E3900112FB2 /* FilmTypeCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmTypeCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		2365AE252465415200112FB2 /* PlanetCategoryCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanetCategoryCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		2365AE2824654E4600112FB2 /* SWDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SWDetailsViewController.xib; sourceTree = "<group>"; };
 		2365AE2B2465ECF700112FB2 /* PeopleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewModel.swift; sourceTree = "<group>"; };
@@ -120,7 +121,7 @@
 		23EB8D60245FF8B600686529 /* Planet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Planet.swift; sourceTree = "<group>"; };
 		23EB8D62245FF8E100686529 /* Vehicle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vehicle.swift; sourceTree = "<group>"; };
 		23EB8D64245FF8FE00686529 /* Starship.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Starship.swift; sourceTree = "<group>"; };
-		23F5B6662460DCA600A5FE6C /* SWCategoryCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWCategoryCollectionViewDataSource.swift; sourceTree = "<group>"; };
+		23F5B6662460DCA600A5FE6C /* SWEntitiesCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWEntitiesCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		23F5B66C2460EF0F00A5FE6C /* SWCategoriesWebService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SWCategoriesWebService.swift; path = Webservice/SWCategoriesWebService.swift; sourceTree = "<group>"; };
 		23F5B66E2460EF0F00A5FE6C /* HTTPConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPConstants.swift; sourceTree = "<group>"; };
 		23F5B66F2460EF0F00A5FE6C /* APIError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
@@ -131,6 +132,7 @@
 		23F5B6742460EF0F00A5FE6C /* SWWebServiceCaller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SWWebServiceCaller.swift; sourceTree = "<group>"; };
 		23F5B68124615A7800A5FE6C /* ResponseSerializer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseSerializer.swift; sourceTree = "<group>"; };
 		23F5B6832462695100A5FE6C /* SWEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWEntity.swift; sourceTree = "<group>"; };
+		7F4074E5246F39D4006AC6D2 /* StarshipTypeCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipTypeCollectionViewDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,11 +208,12 @@
 		2365AE272465437700112FB2 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
-				23F5B6662460DCA600A5FE6C /* SWCategoryCollectionViewDataSource.swift */,
-				2365AE0E2464AEB700112FB2 /* PeopleCategoryCollectionViewDataSource.swift */,
 				2365AE212465225900112FB2 /* EntitiesDataSourceFactory.swift */,
-				2365AE2324653E3900112FB2 /* FilmCategoryCollectionViewDataSource.swift */,
+				23F5B6662460DCA600A5FE6C /* SWEntitiesCollectionViewDataSource.swift */,
+				2365AE0E2464AEB700112FB2 /* PeopleTypeCollectionViewDataSource.swift */,
+				2365AE2324653E3900112FB2 /* FilmTypeCollectionViewDataSource.swift */,
 				2365AE252465415200112FB2 /* PlanetCategoryCollectionViewDataSource.swift */,
+				7F4074E5246F39D4006AC6D2 /* StarshipTypeCollectionViewDataSource.swift */,
 			);
 			path = DataSource;
 			sourceTree = "<group>";
@@ -421,10 +424,10 @@
 			files = (
 				230F1AFF246333690045D8B1 /* GetPeoplesWorker.swift in Sources */,
 				23F5B67A2460EF0F00A5FE6C /* Request+Response.swift in Sources */,
-				2365AE0F2464AEB700112FB2 /* PeopleCategoryCollectionViewDataSource.swift in Sources */,
+				2365AE0F2464AEB700112FB2 /* PeopleTypeCollectionViewDataSource.swift in Sources */,
 				2365AE162464DC8000112FB2 /* GetPlanetEntitiesWebService.swift in Sources */,
 				23EB8D51245FBE4D00686529 /* UIColor+Random.swift in Sources */,
-				2365AE2424653E3900112FB2 /* FilmCategoryCollectionViewDataSource.swift in Sources */,
+				2365AE2424653E3900112FB2 /* FilmTypeCollectionViewDataSource.swift in Sources */,
 				2365AE182464DDA000112FB2 /* GetVehicleEntitiesWebService.swift in Sources */,
 				23F5B68224615A7800A5FE6C /* ResponseSerializer.swift in Sources */,
 				23EB8D5D245FF4F500686529 /* Film.swift in Sources */,
@@ -434,6 +437,7 @@
 				23F5B67E2460EF0F00A5FE6C /* SWWebServiceCaller.swift in Sources */,
 				2319B2B8245F601B00EEAF84 /* SWCategoriesCollectionViewController.swift in Sources */,
 				23F5B67D2460EF0F00A5FE6C /* WebServiceConfiguration.swift in Sources */,
+				7F4074E6246F39D4006AC6D2 /* StarshipTypeCollectionViewDataSource.swift in Sources */,
 				230F1B0324633FE20045D8B1 /* Constants.swift in Sources */,
 				23EB8D65245FF8FE00686529 /* Starship.swift in Sources */,
 				23EB8D5F245FF8AB00686529 /* Species.swift in Sources */,
@@ -459,7 +463,7 @@
 				2319B2B4245F601B00EEAF84 /* AppDelegate.swift in Sources */,
 				23F5B6792460EF0F00A5FE6C /* APIError.swift in Sources */,
 				23EB8D61245FF8B600686529 /* Planet.swift in Sources */,
-				23F5B6672460DCA600A5FE6C /* SWCategoryCollectionViewDataSource.swift in Sources */,
+				23F5B6672460DCA600A5FE6C /* SWEntitiesCollectionViewDataSource.swift in Sources */,
 				23A4DCC1246610E4001FEB66 /* CacheManager.swift in Sources */,
 				2319B2C9245F643700EEAF84 /* SWCategoryCollectionViewCell.swift in Sources */,
 				230B060D246F310100F5F8CB /* GelFilmsWorker.swift in Sources */,

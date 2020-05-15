@@ -45,7 +45,7 @@ class SWDetailsViewController: UIViewController {
   }
 
   private func configureRelatedEntitiesStackView(_ viewModel: ViewModel) {
-    viewModel.relatedViewModel.forEach { (key: SWEntityType, value:[RelatedEntityViewModel]) in
+    viewModel.relatedViewModelPerEntityType.forEach { (key: SWEntityType, value:[RelatedEntityViewModel]) in
       value.forEach { vm in
         let button = UIButton(type: .custom)
         button.setBackgroundImage(UIImage(named: vm.imageName), for: .normal)

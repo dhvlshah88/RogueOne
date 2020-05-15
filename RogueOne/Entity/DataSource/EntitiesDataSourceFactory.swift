@@ -13,19 +13,30 @@ struct EntitiesDataSourceFactory {
     let worker = WorkerFactory.getCategoryWorker(for: type)
     switch type {
     case .people:
-      return PeopleCategoryCollectionViewDataSource(worker: worker,
-                                                    delegate: delegate,
-                                                    cacheManager: cacheManager)
+      return PeopleTypeCollectionViewDataSource(worker: worker,
+                                                delegate: delegate,
+                                                cacheManager: cacheManager)
     case .films:
-      return FilmCategoryCollectionViewDataSource(worker: worker,
-                                                  delegate: delegate,
-                                                  cacheManager: cacheManager)
+      return FilmTypeCollectionViewDataSource(worker: worker,
+                                              delegate: delegate,
+                                              cacheManager: cacheManager)
     case .planets:
       return PlanetCategoryCollectionViewDataSource(worker: worker,
                                                     delegate: delegate,
                                                     cacheManager: cacheManager)
-    default:
-      return SWEntitiesCollectionViewDataSource(type: .films,
+      
+    case .starships:
+      return StarshipTypeCollectionViewDataSource(worker: worker,
+                                                  delegate: delegate,
+                                                  cacheManager: cacheManager)
+    case .vehicles:
+      return SWEntitiesCollectionViewDataSource(type: .vehicles,
+                                                worker: worker,
+                                                delegate: delegate,
+                                                cacheManager: cacheManager)
+    case.species:
+      return SWEntitiesCollectionViewDataSource(type: .species,
+                                                worker: worker,
                                                 delegate: delegate,
                                                 cacheManager: cacheManager)
     }

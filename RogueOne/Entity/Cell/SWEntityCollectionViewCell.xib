@@ -90,6 +90,7 @@
             <size key="customSize" width="110" height="110"/>
             <connections>
                 <outlet property="blurEffectView" destination="lXj-sz-2jR" id="jzk-cH-ifG"/>
+                <outlet property="containerView" destination="1W4-PT-utG" id="8D7-nR-5cH"/>
                 <outlet property="entityImageView" destination="JCs-3i-VpS" id="U3H-y6-VUg"/>
                 <outlet property="entityTitleLabel" destination="7tg-OO-dd1" id="oUn-8A-iZZ"/>
             </connections>

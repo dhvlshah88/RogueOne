@@ -1,52 +1,54 @@
 //
-//  PlanetCategoryCollectionViewDataSource.swift
+//  StarshipTypeCollectionViewDataSource.swift
 //  RogueOne
 //
+//  Created by Dhaval on 5/15/20.
+//  Copyright © 2020 Dhaval Shah. All rights reserved.
 //
 
 import UIKit
 
-class PlanetCategoryCollectionViewDataSource: SWEntitiesCollectionViewDataSource {
-  var planets: Planets {
-    guard let planets = entities as? Planets else {
+class StarshipTypeCollectionViewDataSource: SWEntitiesCollectionViewDataSource {
+  var starships: Starships {
+    guard let starships = entities as? Starships else {
       return []
     }
-    return planets
+    return starships
   }
   
-  var filteredPlanets: Planets {
-    guard let planets = filtered as? Planets else {
+  var filteredStarships: Starships {
+    guard let starships = filtered as? Starships else {
       return []
     }
-    return planets
+    return starships
   }
   
   init(worker: Fetchable,
        delegate: SWEntitiesCollectionViewDataSourceDelegate,
        cacheManager: CacheManager) {
-    super.init(type: .planets,
+    super.init(type: .starships,
                worker: worker,
                delegate: delegate,
                cacheManager: cacheManager)
   }
-  
+
   // Mark: UICollectionViewDataSource
   override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     guard let swEntityCell = collectionView.dequeueReusableCell(withReuseIdentifier: SWEntityCollectionViewCell.reuseIdentifier,
                                                                 for: indexPath) as? SWEntityCollectionViewCell else {
                                                                   return UICollectionViewCell()
     }
-    let planet = !searchActive ? planets[indexPath.row] : filteredPlanets[indexPath.row]
-    var planetUrl = planet.url
-    if planetUrl.last == "/" {
-      planetUrl.removeLast(1)
+    let starship = !searchActive ? starships[indexPath.row] : filteredStarships[indexPath.row]
+    var starshipUrl = starship.url
+    if starshipUrl.last == "/" {
+      starshipUrl.removeLast(1)
     }
-    let lastComponent = planetUrl.components(separatedBy: "/").last ?? ""
-    swEntityCell.configure(text: planet.entityName,
+    let lastComponent = starshipUrl.components(separatedBy: "/").last ?? ""
+    swEntityCell.configure(text: starship.entityName,
                            imageName: "\(type.singularValue)-\(lastComponent)")
     return swEntityCell
   }
-  
+
   override func updateSearchResults(for searchController: UISearchController)
   {
     let whitespaceCharacterSet = CharacterSet.whitespaces
@@ -54,11 +56,12 @@ class PlanetCategoryCollectionViewDataSource: SWEntitiesCollectionViewDataSource
       searchController.searchBar.text!.trimmingCharacters(in: whitespaceCharacterSet)
 
     if !searchString.isEmpty {
-      let filteredPlanets = planets.filter {
+      let filteredStarship = starships.filter {
         return $0.name.contains(searchString)
       }
-      filtered = filteredPlanets
+      filtered = filteredStarship
     }
     delegate?.searchComplete()
   }
+
 }

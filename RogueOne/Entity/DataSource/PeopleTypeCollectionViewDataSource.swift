@@ -1,52 +1,52 @@
 //
-//  PlanetCategoryCollectionViewDataSource.swift
+//  PeopleTypeCollectionViewDataSource.swift
 //  RogueOne
 //
 //
 
 import UIKit
 
-class PlanetCategoryCollectionViewDataSource: SWEntitiesCollectionViewDataSource {
-  var planets: Planets {
-    guard let planets = entities as? Planets else {
-      return []
-    }
-    return planets
-  }
-  
-  var filteredPlanets: Planets {
-    guard let planets = filtered as? Planets else {
-      return []
-    }
-    return planets
-  }
-  
+class PeopleTypeCollectionViewDataSource: SWEntitiesCollectionViewDataSource {
+  var peoples: Peoples {
+     guard let peoples = entities as? Peoples else {
+       return []
+     }
+     return peoples
+   }
+   
+   var filteredPeoples: Peoples {
+     guard let peoples = filtered as? Peoples else {
+       return []
+     }
+     return peoples
+   }
+
   init(worker: Fetchable,
        delegate: SWEntitiesCollectionViewDataSourceDelegate,
        cacheManager: CacheManager) {
-    super.init(type: .planets,
+    super.init(type: .people,
                worker: worker,
                delegate: delegate,
                cacheManager: cacheManager)
   }
-  
+
   // Mark: UICollectionViewDataSource
   override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     guard let swEntityCell = collectionView.dequeueReusableCell(withReuseIdentifier: SWEntityCollectionViewCell.reuseIdentifier,
                                                                 for: indexPath) as? SWEntityCollectionViewCell else {
                                                                   return UICollectionViewCell()
     }
-    let planet = !searchActive ? planets[indexPath.row] : filteredPlanets[indexPath.row]
-    var planetUrl = planet.url
-    if planetUrl.last == "/" {
-      planetUrl.removeLast(1)
+    let people = !searchActive ? peoples[indexPath.row] : filteredPeoples[indexPath.row]
+    var peopleUrl = people.url
+    if peopleUrl.last == "/" {
+      peopleUrl.removeLast(1)
     }
-    let lastComponent = planetUrl.components(separatedBy: "/").last ?? ""
-    swEntityCell.configure(text: planet.entityName,
+    let lastComponent = peopleUrl.components(separatedBy: "/").last ?? ""
+    swEntityCell.configure(text: people.entityName,
                            imageName: "\(type.singularValue)-\(lastComponent)")
     return swEntityCell
   }
-  
+
   override func updateSearchResults(for searchController: UISearchController)
   {
     let whitespaceCharacterSet = CharacterSet.whitespaces
@@ -54,11 +54,12 @@ class PlanetCategoryCollectionViewDataSource: SWEntitiesCollectionViewDataSource
       searchController.searchBar.text!.trimmingCharacters(in: whitespaceCharacterSet)
 
     if !searchString.isEmpty {
-      let filteredPlanets = planets.filter {
+      let filteredPeoples = peoples.filter {
         return $0.name.contains(searchString)
       }
-      filtered = filteredPlanets
+      filtered = filteredPeoples
     }
     delegate?.searchComplete()
   }
+
 }
