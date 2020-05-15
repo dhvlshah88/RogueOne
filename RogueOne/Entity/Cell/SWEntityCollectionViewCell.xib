@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Strjmono.ttf">
+            <string>StarJediLogoMonoLine</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SWEntityCollectionViewCell" id="gTV-IL-0wX" customClass="SWEntityCollectionViewCell" customModule="RogueOne" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q2g-VV-svQ" userLabel="Content View">
+                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                        <subviews>
+                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1W4-PT-utG" userLabel="Color View">
+                                <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JCs-3i-VpS">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                    </imageView>
+                                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lXj-sz-2jR">
+                                        <rect key="frame" x="0.0" y="80" width="120" height="40"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="LCI-Vt-gYU">
+                                            <rect key="frame" x="0.0" y="0.0" width="120" height="40"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <subviews>
+                                                <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7tg-OO-dd1">
+                                                    <rect key="frame" x="8" y="8" width="104" height="24.5"/>
+                                                    <fontDescription key="fontDescription" name="StarJediLogoMonoLine" family="Star Jedi Logo MonoLine" pointSize="14"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="7tg-OO-dd1" secondAttribute="trailing" constant="8" id="32N-Bx-fyK"/>
+                                                <constraint firstItem="7tg-OO-dd1" firstAttribute="leading" secondItem="LCI-Vt-gYU" secondAttribute="leading" constant="8" id="cSL-jx-Swh"/>
+                                                <constraint firstItem="7tg-OO-dd1" firstAttribute="centerY" secondItem="LCI-Vt-gYU" secondAttribute="centerY" id="eQN-Mf-zLu"/>
+                                            </constraints>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="A4A-O8-9vY"/>
+                                        </constraints>
+                                        <blurEffect style="regular"/>
+                                    </visualEffectView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="lXj-sz-2jR" firstAttribute="leading" secondItem="1W4-PT-utG" secondAttribute="leading" id="6kI-LC-PSe"/>
+                                    <constraint firstAttribute="trailing" secondItem="JCs-3i-VpS" secondAttribute="trailing" id="Fo8-FL-pHP"/>
+                                    <constraint firstAttribute="bottom" secondItem="JCs-3i-VpS" secondAttribute="bottom" id="Q7T-jm-rbp"/>
+                                    <constraint firstItem="JCs-3i-VpS" firstAttribute="top" secondItem="1W4-PT-utG" secondAttribute="top" id="Ufv-38-Lk1"/>
+                                    <constraint firstAttribute="bottom" secondItem="lXj-sz-2jR" secondAttribute="bottom" id="f7j-Vu-lVP"/>
+                                    <constraint firstItem="JCs-3i-VpS" firstAttribute="leading" secondItem="1W4-PT-utG" secondAttribute="leading" id="s3E-7C-WfW"/>
+                                    <constraint firstAttribute="trailing" secondItem="lXj-sz-2jR" secondAttribute="trailing" id="wOE-Nn-Gma"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="1W4-PT-utG" secondAttribute="bottom" id="FLr-EX-qHC"/>
+                            <constraint firstItem="1W4-PT-utG" firstAttribute="top" secondItem="q2g-VV-svQ" secondAttribute="top" id="WW6-8K-VeK"/>
+                            <constraint firstItem="1W4-PT-utG" firstAttribute="leading" secondItem="q2g-VV-svQ" secondAttribute="leading" id="mKN-kg-juV"/>
+                            <constraint firstAttribute="trailing" secondItem="1W4-PT-utG" secondAttribute="trailing" id="nqh-0t-E7x"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="12"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="q2g-VV-svQ" firstAttribute="trailing" secondItem="gTV-IL-0wX" secondAttribute="trailing" id="B5l-45-ed6"/>
+                <constraint firstAttribute="top" secondItem="q2g-VV-svQ" secondAttribute="top" id="P3c-Ya-HXo"/>
+                <constraint firstItem="q2g-VV-svQ" firstAttribute="bottom" secondItem="gTV-IL-0wX" secondAttribute="bottom" id="aBh-oA-SdS"/>
+                <constraint firstAttribute="leading" secondItem="q2g-VV-svQ" secondAttribute="leading" id="e5V-1g-Zwe"/>
+            </constraints>
+            <size key="customSize" width="110" height="110"/>
+            <connections>
+                <outlet property="blurEffectView" destination="lXj-sz-2jR" id="jzk-cH-ifG"/>
+                <outlet property="entityImageView" destination="JCs-3i-VpS" id="U3H-y6-VUg"/>
+                <outlet property="entityTitleLabel" destination="7tg-OO-dd1" id="oUn-8A-iZZ"/>
+            </connections>
+            <point key="canvasLocation" x="173.91304347826087" y="132.58928571428572"/>
+        </collectionViewCell>
+    </objects>
+</document>

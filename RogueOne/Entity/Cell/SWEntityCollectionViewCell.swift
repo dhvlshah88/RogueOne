@@ -1,9 +1,7 @@
 //
 //  SWEntityCollectionViewCell.swift
-//  BabyYoda
+//  RogueOne
 //
-//  Created by Dhaval Shah on 5/3/20.
-//  Copyright © 2020 Dhaval Shah. All rights reserved.
 //
 
 import UIKit
@@ -12,7 +10,8 @@ class SWEntityCollectionViewCell: UICollectionViewCell {
 
   static let reuseIdentifier = "SWEntityCollectionViewCell"
 
-  @IBOutlet weak var entityColorView: UIView!
+  @IBOutlet weak var blurEffectView: UIVisualEffectView!
+  @IBOutlet weak var entityImageView: UIImageView!
   @IBOutlet weak var entityTitleLabel: UILabel!
 
   override func awakeFromNib() {
@@ -20,8 +19,8 @@ class SWEntityCollectionViewCell: UICollectionViewCell {
     entityTitleLabel.text = ""
   }
 
-  func configure(text: String) {
-    entityColorView.backgroundColor = UIColor.random()
+  func configure(text: String, imageName: String) {
     entityTitleLabel.text = text
+    entityImageView.image = UIImage(named: imageName) ?? #imageLiteral(resourceName: "placeholder.jpg")
   }
 }
