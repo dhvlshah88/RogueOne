@@ -21,7 +21,7 @@ class SWEntitiesCollectionViewController: UICollectionViewController {
   private var searchController: UISearchController?
   private var cacheManager: CacheManager
   private var filteredEntities: [SWEntity] = []
-  private var searchActive : Bool = false
+  private var searchActive: Bool = false
 
   init(cacheManager: CacheManager) {
     self.cacheManager = cacheManager
@@ -32,7 +32,6 @@ class SWEntitiesCollectionViewController: UICollectionViewController {
     self.cacheManager = CacheManager()
     super.init(coder: coder)
   }
-
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -46,6 +45,7 @@ class SWEntitiesCollectionViewController: UICollectionViewController {
   private func configureCollectionView() {
     collectionView.delegate = dataSource
     collectionView.dataSource = dataSource
+    collectionView.prefetchDataSource = dataSource
     collectionView.collectionViewLayout = UICollectionViewFlowLayout()
     collectionView.backgroundColor = .lightGray
     collectionView.backgroundView = activityIndicatorView
@@ -112,7 +112,7 @@ extension SWEntitiesCollectionViewController: SWEntitiesCollectionViewDataSource
 }
 
 extension SWEntitiesCollectionViewController: UISearchBarDelegate {
-  //MARK: Search Bar
+  // MARK: Search Bar
   func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
     dataSource?.searchActive = false
     collectionView.reloadData()

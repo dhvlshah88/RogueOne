@@ -8,50 +8,50 @@ import Foundation
 
 class WebService<Request: AnyObject, Response: AnyObject> {
   typealias SuccessClosure = (Response) -> Void
-  
+
   let configuration: WebServiceConfiguration
-  
+
   var httpMethod: HTTP.Method {
     return .get
   }
-  
+
   var url: URL {
     return configuration.baseURL
   }
-  
+
   required init(configuration: WebServiceConfiguration) {
     self.configuration = configuration
   }
-  
+
   class func `default`() -> Self {
     return self.init(configuration: WebServiceConfiguration.default())
   }
-  
+
   func urlRequest(with request: Request) -> URLRequest {
     var urlRequest = URLRequest(url: url)
     urlRequest.httpMethod = httpMethod.rawValue
     urlRequest.setValue(HTTP.HeaderValue.applicationJSON, forHTTPHeaderField: HTTP.HeaderName.contentType)
-    
+
     if httpMethod != .get {
       urlRequest.httpBody = httpBody(with: request)
     }
     return urlRequest
   }
-  
+
   func httpBody(with request: Request) -> Data? {
     return nil
   }
-  
+
   func responseFromData(_ data: Data) throws -> Response {
     throw APIError(name: "Abstract method Error", message: "Abstract method, must be overridden")
   }
-  
+
   func call(request: Request,
             success: @escaping SuccessClosure,
             failure: @escaping FailureClosure,
             queue: DispatchQueue? = nil) {
     let urlRequest = self.urlRequest(with: request)
-    
+
     configuration.caller.start(
       request: urlRequest,
       queue: queue ?? configuration.processingQueue) { [weak self] (result: WebServiceResult<Data>) in
@@ -60,8 +60,7 @@ class WebService<Request: AnyObject, Response: AnyObject> {
                       failure: failure)
     }
   }
-  
-  
+
   private func process(_ result: WebServiceResult<Data>,
                        success: @escaping SuccessClosure,
                        failure: @escaping FailureClosure) {
@@ -82,7 +81,7 @@ class WebService<Request: AnyObject, Response: AnyObject> {
       } catch let DecodingError.valueNotFound(value, context) {
         print("Value '\(value)' not found: \(context.debugDescription)")
         print("codingPath:", context.codingPath)
-      } catch let DecodingError.typeMismatch(type, context)  {
+      } catch let DecodingError.typeMismatch(type, context) {
         var message = "Type '\(type)' mismatch: \(context.debugDescription) \n"
         message += "codingPath: \(context.codingPath)"
         let apiError = APIError(message: message)
@@ -93,7 +92,7 @@ class WebService<Request: AnyObject, Response: AnyObject> {
       }
     }
   }
-  
+
   private func dispatchOnCallbackQueue(_ completion: @escaping @autoclosure () -> Void) {
     configuration.callBackQueue.async {
       completion()

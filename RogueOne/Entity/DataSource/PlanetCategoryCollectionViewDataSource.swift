@@ -13,14 +13,14 @@ class PlanetCategoryCollectionViewDataSource: SWEntitiesCollectionViewDataSource
     }
     return planets
   }
-  
+
   var filteredPlanets: Planets {
     guard let planets = filtered as? Planets else {
       return []
     }
     return planets
   }
-  
+
   init(worker: Fetchable,
        delegate: SWEntitiesCollectionViewDataSourceDelegate,
        cacheManager: CacheManager) {
@@ -29,8 +29,8 @@ class PlanetCategoryCollectionViewDataSource: SWEntitiesCollectionViewDataSource
                delegate: delegate,
                cacheManager: cacheManager)
   }
-  
-  // Mark: UICollectionViewDataSource
+
+  // MARK: UICollectionViewDataSource
   override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     guard let swEntityCell = collectionView.dequeueReusableCell(withReuseIdentifier: SWEntityCollectionViewCell.reuseIdentifier,
                                                                 for: indexPath) as? SWEntityCollectionViewCell else {
@@ -46,9 +46,8 @@ class PlanetCategoryCollectionViewDataSource: SWEntitiesCollectionViewDataSource
                            imageName: "\(type.singularValue)-\(lastComponent)")
     return swEntityCell
   }
-  
-  override func updateSearchResults(for searchController: UISearchController)
-  {
+
+  override func updateSearchResults(for searchController: UISearchController) {
     let whitespaceCharacterSet = CharacterSet.whitespaces
     let searchString =
       searchController.searchBar.text!.trimmingCharacters(in: whitespaceCharacterSet)

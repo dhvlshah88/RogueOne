@@ -41,4 +41,3 @@ extension SWAllCategoryCollectionViewController: SWAllCategoryCollectionViewData
     navigationController?.pushViewController(swEntitiesCollectionViewController!, animated: true)
   }
 }
-

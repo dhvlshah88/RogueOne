@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -25,7 +25,7 @@
 		2319B2C9245F643700EEAF84 /* SWCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2319B2C7245F643700EEAF84 /* SWCategoryCollectionViewCell.swift */; };
 		2319B2CA245F643700EEAF84 /* SWCategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2319B2C8245F643700EEAF84 /* SWCategoryCollectionViewCell.xib */; };
 		2365AE0F2464AEB700112FB2 /* PeopleTypeCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2365AE0E2464AEB700112FB2 /* PeopleTypeCollectionViewDataSource.swift */; };
-		2365AE112464C62000112FB2 /* SWCategoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2365AE102464C62000112FB2 /* SWCategoryResponse.swift */; };
+		2365AE112464C62000112FB2 /* SWEntitiesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2365AE102464C62000112FB2 /* SWEntitiesResponse.swift */; };
 		2365AE142464DC4B00112FB2 /* GetPeopleEntitiesWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2365AE132464DC4B00112FB2 /* GetPeopleEntitiesWebService.swift */; };
 		2365AE162464DC8000112FB2 /* GetPlanetEntitiesWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2365AE152464DC8000112FB2 /* GetPlanetEntitiesWebService.swift */; };
 		2365AE182464DDA000112FB2 /* GetVehicleEntitiesWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2365AE172464DDA000112FB2 /* GetVehicleEntitiesWebService.swift */; };
@@ -93,7 +93,7 @@
 		2319B2C7245F643700EEAF84 /* SWCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		2319B2C8245F643700EEAF84 /* SWCategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SWCategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		2365AE0E2464AEB700112FB2 /* PeopleTypeCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleTypeCollectionViewDataSource.swift; sourceTree = "<group>"; };
-		2365AE102464C62000112FB2 /* SWCategoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWCategoryResponse.swift; sourceTree = "<group>"; };
+		2365AE102464C62000112FB2 /* SWEntitiesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWEntitiesResponse.swift; sourceTree = "<group>"; };
 		2365AE132464DC4B00112FB2 /* GetPeopleEntitiesWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPeopleEntitiesWebService.swift; sourceTree = "<group>"; };
 		2365AE152464DC8000112FB2 /* GetPlanetEntitiesWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlanetEntitiesWebService.swift; sourceTree = "<group>"; };
 		2365AE172464DDA000112FB2 /* GetVehicleEntitiesWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetVehicleEntitiesWebService.swift; sourceTree = "<group>"; };
@@ -345,7 +345,7 @@
 				23F5B6732460EF0F00A5FE6C /* WebServiceConfiguration.swift */,
 				23F5B6742460EF0F00A5FE6C /* SWWebServiceCaller.swift */,
 				23F5B68124615A7800A5FE6C /* ResponseSerializer.swift */,
-				2365AE102464C62000112FB2 /* SWCategoryResponse.swift */,
+				2365AE102464C62000112FB2 /* SWEntitiesResponse.swift */,
 			);
 			name = Base;
 			path = Webservice/Base;
@@ -365,7 +365,6 @@
 				1024548505645B8ED4B2D0F4 /* Pods-RogueOne.debug.xcconfig */,
 				2273F128819538D801EB1C18 /* Pods-RogueOne.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -539,7 +538,7 @@
 				23F5B6782460EF0F00A5FE6C /* HTTPConstants.swift in Sources */,
 				2319B2B6245F601B00EEAF84 /* SceneDelegate.swift in Sources */,
 				23A4DCC324661830001FEB66 /* RelatedEntityViewModel.swift in Sources */,
-				2365AE112464C62000112FB2 /* SWCategoryResponse.swift in Sources */,
+				2365AE112464C62000112FB2 /* SWEntitiesResponse.swift in Sources */,
 				2365AE1E2464DDDE00112FB2 /* GetFilmEntitiesWebService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

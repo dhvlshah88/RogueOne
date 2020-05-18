@@ -4,6 +4,8 @@
 //
 //
 
-class Request { }
+class Request {
+  var queryItems: [String: String] = [:]
+}
 
 class Response { }

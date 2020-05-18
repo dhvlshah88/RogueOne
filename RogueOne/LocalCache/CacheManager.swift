@@ -22,7 +22,6 @@ class CacheManager {
     categoryMap[.vehicles] = [String: Vehicle]()
   }
 
-
   func addPeoples(_ peoples: Peoples) {
     if peoples.isEmpty {
       return
@@ -72,7 +71,7 @@ class CacheManager {
 
   var count: Int {
     var _count = 0
-    categoryMap.forEach( {(key, value) in
+    categoryMap.forEach({(_, value) in
       _count += value.count
     })
     return _count

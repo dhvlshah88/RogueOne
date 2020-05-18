@@ -7,6 +7,6 @@ target 'RogueOne' do
 
   # Pods for RogueOne
   pod 'SnapKit', '~> 5.0.0'
-  pod 'SwiftLint', '~> 0.39'
+  pod 'SwiftLint', '0.39.2'
 
 end

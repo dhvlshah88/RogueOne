@@ -13,7 +13,7 @@ class PeopleTypeCollectionViewDataSource: SWEntitiesCollectionViewDataSource {
      }
      return peoples
    }
-   
+
    var filteredPeoples: Peoples {
      guard let peoples = filtered as? Peoples else {
        return []
@@ -30,7 +30,7 @@ class PeopleTypeCollectionViewDataSource: SWEntitiesCollectionViewDataSource {
                cacheManager: cacheManager)
   }
 
-  // Mark: UICollectionViewDataSource
+  // MARK: UICollectionViewDataSource
   override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     guard let swEntityCell = collectionView.dequeueReusableCell(withReuseIdentifier: SWEntityCollectionViewCell.reuseIdentifier,
                                                                 for: indexPath) as? SWEntityCollectionViewCell else {
@@ -47,8 +47,7 @@ class PeopleTypeCollectionViewDataSource: SWEntitiesCollectionViewDataSource {
     return swEntityCell
   }
 
-  override func updateSearchResults(for searchController: UISearchController)
-  {
+  override func updateSearchResults(for searchController: UISearchController) {
     let whitespaceCharacterSet = CharacterSet.whitespaces
     let searchString =
       searchController.searchBar.text!.trimmingCharacters(in: whitespaceCharacterSet)

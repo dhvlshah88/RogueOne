@@ -15,14 +15,14 @@ class StarshipTypeCollectionViewDataSource: SWEntitiesCollectionViewDataSource {
     }
     return starships
   }
-  
+
   var filteredStarships: Starships {
     guard let starships = filtered as? Starships else {
       return []
     }
     return starships
   }
-  
+
   init(worker: Fetchable,
        delegate: SWEntitiesCollectionViewDataSourceDelegate,
        cacheManager: CacheManager) {
@@ -32,7 +32,7 @@ class StarshipTypeCollectionViewDataSource: SWEntitiesCollectionViewDataSource {
                cacheManager: cacheManager)
   }
 
-  // Mark: UICollectionViewDataSource
+  // MARK: UICollectionViewDataSource
   override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     guard let swEntityCell = collectionView.dequeueReusableCell(withReuseIdentifier: SWEntityCollectionViewCell.reuseIdentifier,
                                                                 for: indexPath) as? SWEntityCollectionViewCell else {
@@ -49,8 +49,7 @@ class StarshipTypeCollectionViewDataSource: SWEntitiesCollectionViewDataSource {
     return swEntityCell
   }
 
-  override func updateSearchResults(for searchController: UISearchController)
-  {
+  override func updateSearchResults(for searchController: UISearchController) {
     let whitespaceCharacterSet = CharacterSet.whitespaces
     let searchString =
       searchController.searchBar.text!.trimmingCharacters(in: whitespaceCharacterSet)

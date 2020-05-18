@@ -13,7 +13,7 @@ class FilmTypeCollectionViewDataSource: SWEntitiesCollectionViewDataSource {
      }
      return films
    }
-   
+
    var filteredFilms: Films {
      guard let films = filtered as? Films else {
        return []
@@ -30,7 +30,7 @@ class FilmTypeCollectionViewDataSource: SWEntitiesCollectionViewDataSource {
                cacheManager: cacheManager)
   }
 
-  // Mark: UICollectionViewDataSource
+  // MARK: UICollectionViewDataSource
   override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     guard let swEntityCell = collectionView.dequeueReusableCell(withReuseIdentifier: SWEntityCollectionViewCell.reuseIdentifier,
                                                                 for: indexPath) as? SWEntityCollectionViewCell else {

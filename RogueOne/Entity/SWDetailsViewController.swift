@@ -45,7 +45,7 @@ class SWDetailsViewController: UIViewController {
   }
 
   private func configureRelatedEntitiesStackView(_ viewModel: ViewModel) {
-    viewModel.relatedViewModelPerEntityType.forEach { (key: SWEntityType, value:[RelatedEntityViewModel]) in
+    viewModel.relatedViewModelPerEntityType.forEach { (_: SWEntityType, value: [RelatedEntityViewModel]) in
       value.forEach { vm in
         let button = UIButton(type: .custom)
         button.setBackgroundImage(UIImage(named: vm.imageName), for: .normal)
@@ -57,7 +57,7 @@ class SWDetailsViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = true
         button.widthAnchor.constraint(equalToConstant: 100).isActive = true
         button.heightAnchor.constraint(equalToConstant: 100).isActive = true
-        
+
         relatedEntitiesStackView.addArrangedSubview(button)
       }
     }

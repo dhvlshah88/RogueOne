@@ -38,7 +38,7 @@ class SWAllCategoryCollectionViewDataSource: NSObject, UICollectionViewDataSourc
     delegate?.presentSelectedCategoryViewController(swCategories[indexPath.row])
   }
 
-  // Mark: UICollectionViewDelegateFlowLayout
+  // MARK: UICollectionViewDelegateFlowLayout
   func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
     let numberOfItems = 2
     let flowLayout = collectionViewLayout as! UICollectionViewFlowLayout

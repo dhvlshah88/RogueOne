@@ -20,7 +20,7 @@ class Planet: SWEntity {
   var entityName: String {
     return name
   }
-  
+
   var type: SWEntityType {
     return .planets
   }
@@ -34,4 +34,3 @@ class Planet: SWEntity {
     case population, residents, films, created, edited, url
   }
 }
-

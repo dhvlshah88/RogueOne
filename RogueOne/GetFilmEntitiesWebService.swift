@@ -6,7 +6,7 @@
 
 import Foundation
 
-class GetFilmEntitiesWebService: SWCategoriesWebService<SWCategoryRequest, FilmEntitiesResponse> {
+class GetFilmEntitiesWebService: SWCategoriesWebService<SWEntitiesRequest, FilmEntitiesResponse> {
   override func responseFromData(_ data: Data) throws -> FilmEntitiesResponse {
     return try newJSONDecoder().decode(FilmEntitiesResponse.self,
                                        from: data)

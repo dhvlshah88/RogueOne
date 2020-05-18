@@ -37,4 +37,3 @@ extension SWCategoriesCollectionViewController: SWSearchCollectionViewDataSource
     present(swCategorySearchViewController!, animated: true)
   }
 }
-

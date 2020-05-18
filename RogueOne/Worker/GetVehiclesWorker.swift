@@ -12,12 +12,12 @@ class GetVehiclesWorker: Fetchable {
   lazy var vehiclesWebservice = GetVehicleEntitiesWebService.default()
 
   func getEntities(for type: SWEntityType,
-                   success: @escaping SWCategoriesClosure,
+                   success: @escaping SWEntitiesResponseClosure,
                    failure: @escaping FailureClosure) {
-    let request = SWCategoryRequest(type: type)
+    let request = SWEntitiesRequest(type: type)
     vehiclesWebservice.call(request: request,
                             success: { (response) in
-                              success(response.results)
+                              success(response)
     },
                             failure: failure)
   }

@@ -12,12 +12,12 @@ class GetFilmsWorker: Fetchable {
   lazy var filmsWebservice = GetFilmEntitiesWebService.default()
 
   func getEntities(for type: SWEntityType,
-                   success: @escaping SWCategoriesClosure,
+                   success: @escaping SWEntitiesResponseClosure,
                    failure: @escaping FailureClosure) {
-    let request = SWCategoryRequest(type: type)
+    let request = SWEntitiesRequest(type: type)
     filmsWebservice.call(request: request,
                          success: { (response) in
-                          success(response.results)
+                          success(response)
     },
                          failure: failure)
   }

@@ -64,7 +64,7 @@ extension PeopleViewModel {
     return body
   }
 
-  var relatedViewModelPerEntityType: [SWEntityType : [RelatedEntityViewModel]] {
+  var relatedViewModelPerEntityType: [SWEntityType: [RelatedEntityViewModel]] {
     return [.films: createFilmRelatedViewModel()]
   }
 

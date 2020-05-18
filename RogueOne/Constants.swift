@@ -17,4 +17,4 @@ typealias PeoplesClosure = (Peoples) -> Void
 typealias FailureClosure = (APIError) -> Void
 typealias BoolClosure = (Bool) -> Void
 typealias VoidClosure = () -> Void
-typealias SWCategoriesClosure = (Entities) -> Void
+typealias SWEntitiesResponseClosure = (SWEntitiesResponse) -> Void

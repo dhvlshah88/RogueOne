@@ -24,7 +24,7 @@ struct EntitiesDataSourceFactory {
       return PlanetCategoryCollectionViewDataSource(worker: worker,
                                                     delegate: delegate,
                                                     cacheManager: cacheManager)
-      
+
     case .starships:
       return StarshipTypeCollectionViewDataSource(worker: worker,
                                                   delegate: delegate,

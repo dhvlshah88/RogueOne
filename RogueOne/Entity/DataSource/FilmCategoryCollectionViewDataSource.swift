@@ -43,7 +43,7 @@ class FilmTypeCollectionViewDataSource: SWEntitiesCollectionViewDataSource {
     })
   }
 
-  // Mark: UICollectionViewDataSource
+  // MARK: UICollectionViewDataSource
   override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     return films.count
   }

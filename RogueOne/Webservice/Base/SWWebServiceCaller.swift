@@ -8,7 +8,7 @@ import Foundation
 import Network
 
 class SWWebServiceCaller {
-  
+
   typealias WebServiceCallerCompletion = (_ result: WebServiceResult<Data>) -> Void
 
   static let session: URLSession = {
@@ -16,7 +16,7 @@ class SWWebServiceCaller {
     let urlSession = URLSession(configuration: urlSessionConfiguration)
     return urlSession
   }()
-  
+
   private var dataTask: URLSessionDataTask?
 
   static func dataResponseSerializer() -> ResponseSerializer<Data> {
@@ -37,7 +37,7 @@ class SWWebServiceCaller {
       return .success(validData)
     }
   }
-  
+
   func start(request: URLRequest,
              queue: DispatchQueue,
              completion: @escaping WebServiceCallerCompletion) {
