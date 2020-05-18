@@ -36,14 +36,16 @@ class PeopleTypeCollectionViewDataSource: SWEntitiesCollectionViewDataSource {
                                                                 for: indexPath) as? SWEntityCollectionViewCell else {
                                                                   return UICollectionViewCell()
     }
-    let people = !searchActive ? peoples[indexPath.row] : filteredPeoples[indexPath.row]
-    var peopleUrl = people.url
-    if peopleUrl.last == "/" {
-      peopleUrl.removeLast(1)
+    if !isLoadingCell(for: indexPath) {
+      let people = !searchActive ? peoples[indexPath.row] : filteredPeoples[indexPath.row]
+      var peopleUrl = people.url
+      if peopleUrl.last == "/" {
+        peopleUrl.removeLast(1)
+      }
+      let lastComponent = peopleUrl.components(separatedBy: "/").last ?? ""
+      swEntityCell.configure(text: people.entityName,
+                             imageName: "\(type.singularValue)-\(lastComponent)")
     }
-    let lastComponent = peopleUrl.components(separatedBy: "/").last ?? ""
-    swEntityCell.configure(text: people.entityName,
-                           imageName: "\(type.singularValue)-\(lastComponent)")
     return swEntityCell
   }
 

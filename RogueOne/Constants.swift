@@ -18,3 +18,4 @@ typealias FailureClosure = (APIError) -> Void
 typealias BoolClosure = (Bool) -> Void
 typealias VoidClosure = () -> Void
 typealias SWEntitiesResponseClosure = (SWEntitiesResponse) -> Void
+typealias EntitiesClosure = (Entities?) -> Void

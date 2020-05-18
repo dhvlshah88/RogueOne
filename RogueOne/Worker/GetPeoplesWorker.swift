@@ -12,6 +12,10 @@ protocol Fetchable {
   func getEntities(for type: SWEntityType,
                    success: @escaping SWEntitiesResponseClosure,
                    failure: @escaping FailureClosure)
+
+  func getNextEntities(for urlString: String,
+                       success: @escaping SWEntitiesResponseClosure,
+                       failure: @escaping FailureClosure)
 }
 
 class GetPeoplesWorker: Fetchable {
@@ -22,7 +26,18 @@ class GetPeoplesWorker: Fetchable {
                    failure: @escaping FailureClosure) {
     let request = SWEntitiesRequest(type: type)
     peoplesWebservice.call(request: request,
-                           success: { (response) in
+                           success: { response in
+                            success(response)
+    },
+                           failure: failure)
+  }
+
+  func getNextEntities(for urlString: String,
+                       success: @escaping SWEntitiesResponseClosure,
+                       failure: @escaping FailureClosure) {
+    let request = SWEntitiesRequest(urlString)
+    peoplesWebservice.call(request: request,
+                           success: { response in
                             success(response)
     },
                            failure: failure)

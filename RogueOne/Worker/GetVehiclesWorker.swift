@@ -21,4 +21,8 @@ class GetVehiclesWorker: Fetchable {
     },
                             failure: failure)
   }
+
+  func getNextEntities(for urlString: String, success: @escaping SWEntitiesResponseClosure, failure: @escaping FailureClosure) {
+
+  }
 }

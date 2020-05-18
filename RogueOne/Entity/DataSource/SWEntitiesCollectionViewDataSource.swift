@@ -27,6 +27,7 @@ class SWEntitiesCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
   var filtered: Entities = []
   var totalEntitiesCount: Int = 0
   var nextPageUrl: String = ""
+  var isGetInProgress: Bool = false
   var worker: Fetchable
   private(set) var cacheManager: CacheManager
   weak var delegate: SWEntitiesCollectionViewDataSourceDelegate?
@@ -89,8 +90,66 @@ class SWEntitiesCollectionViewDataSource: NSObject, UICollectionViewDataSource, 
 
 extension SWEntitiesCollectionViewDataSource: UICollectionViewDataSourcePrefetching {
   func collectionView(_ collectionView: UICollectionView, prefetchItemsAt indexPaths: [IndexPath]) {
-
+    if indexPaths.contains(where: isLoadingCell) {
+      getNextEntities { [weak self] nextEntities in
+        guard let strongSelf = self, let nextEntities = nextEntities, !nextEntities.isEmpty else {
+          return
+        }
+        let nextIndexPathsToBeReload = strongSelf.calculateIndexPathsToReload(from: nextEntities)
+        let visibleIndexPaths = strongSelf.indexPathsToReload(visibleIndexPaths: collectionView.indexPathsForVisibleItems, intersecting: nextIndexPathsToBeReload)
+        collectionView.reloadItems(at: visibleIndexPaths)
+      }
+    }
   }
+
+  func isLoadingCell(for indexPath: IndexPath) -> Bool {
+    return indexPath.row >= entities.count
+  }
+
+  private func getNextEntities(_ completion: @escaping EntitiesClosure) {
+    if let map = cacheManager.categoryMap[type], !map.isEmpty {
+      let cachedEntities = Array(map.values)
+      self.entities = cachedEntities
+      completion(cachedEntities)
+      return
+    }
+    guard !isGetInProgress else {
+      return
+    }
+    isGetInProgress = true
+    worker.getNextEntities(for: nextPageUrl,
+                       success: { [weak self] response in
+                        guard let strongSelf = self else {
+                          completion([])
+                          return
+                        }
+                        strongSelf.isGetInProgress = false
+                        strongSelf.entities.append(contentsOf: response.result)
+                        strongSelf.nextPageUrl = response.next
+                        //TO-DO - Add to entities to cache for reduce api traffic.
+                        completion(response.result)
+      },
+                       failure: { [weak self] error in
+                        guard let strongSelf = self else {
+                          completion(nil)
+                          return
+                        }
+                        strongSelf.isGetInProgress = false
+                        completion(nil)
+    })
+  }
+
+  private func calculateIndexPathsToReload(from newEntities: Entities) -> [IndexPath] {
+    let startIndex = entities.count - newEntities.count
+    let endIndex = startIndex + newEntities.count
+    return (startIndex..<endIndex).map { IndexPath(row: $0, section: 0) }
+  }
+
+  private func indexPathsToReload(visibleIndexPaths: [IndexPath], intersecting indexPaths: [IndexPath]) -> [IndexPath] {
+    let indexPathsIntersection = Set(visibleIndexPaths).intersection(indexPaths)
+    return Array(indexPathsIntersection)
+  }
+
 }
 
 extension SWEntitiesCollectionViewDataSource: UICollectionViewDelegateFlowLayout {

@@ -21,4 +21,13 @@ class GetStarshipsWorker: Fetchable {
     },
                              failure: failure)
   }
+
+  func getNextEntities(for urlString: String, success: @escaping SWEntitiesResponseClosure, failure: @escaping FailureClosure) {
+    let request = SWEntitiesRequest(urlString)
+    starshipsWebservice.call(request: request,
+                           success: { response in
+                            success(response)
+    },
+                           failure: failure)
+  }
 }

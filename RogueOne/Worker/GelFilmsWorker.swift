@@ -9,16 +9,25 @@
 import Foundation
 
 class GetFilmsWorker: Fetchable {
-  lazy var filmsWebservice = GetFilmEntitiesWebService.default()
+  lazy var speciesWebService = GetSpeciesEntitiesWebService.default()
 
   func getEntities(for type: SWEntityType,
                    success: @escaping SWEntitiesResponseClosure,
                    failure: @escaping FailureClosure) {
     let request = SWEntitiesRequest(type: type)
-    filmsWebservice.call(request: request,
+    speciesWebService.call(request: request,
                          success: { (response) in
                           success(response)
     },
                          failure: failure)
+  }
+
+  func getNextEntities(for urlString: String, success: @escaping SWEntitiesResponseClosure, failure: @escaping FailureClosure) {
+    let request = SWEntitiesRequest(urlString)
+    speciesWebService.call(request: request,
+                             success: { response in
+                              success(response)
+    },
+                             failure: failure)
   }
 }
