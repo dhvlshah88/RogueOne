@@ -7,5 +7,6 @@
 import Foundation
 
 struct ResponseSerializer<T> {
-  var serializedResponse: (Data?, HTTPURLResponse?, Error?) -> WebServiceResult<T>
+  typealias SerializedResponse = (Data?, HTTPURLResponse?, Error?) -> WebServiceResult<T>
+  var serializedResponse: SerializedResponse
 }

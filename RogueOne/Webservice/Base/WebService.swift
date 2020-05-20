@@ -50,6 +50,8 @@ class WebService<Request: AnyObject, Response: AnyObject> {
             success: @escaping SuccessClosure,
             failure: @escaping FailureClosure,
             queue: DispatchQueue? = nil) {
+    cancel()
+
     let urlRequest = self.urlRequest(with: request)
 
     configuration.caller.start(
@@ -59,6 +61,10 @@ class WebService<Request: AnyObject, Response: AnyObject> {
                       success: success,
                       failure: failure)
     }
+  }
+
+  private func cancel() {
+    configuration.caller.dataTask?.cancel()
   }
 
   private func process(_ result: WebServiceResult<Data>,
@@ -76,11 +82,15 @@ class WebService<Request: AnyObject, Response: AnyObject> {
       } catch let DecodingError.dataCorrupted(context) {
         print(context)
       } catch let DecodingError.keyNotFound(key, context) {
-        print("Key '\(key)' not found:", context.debugDescription)
-        print("codingPath:", context.codingPath)
+        var message = "Key '\(key)' not found: \(context.debugDescription) \n"
+        message += "codingPath: \(context.codingPath)"
+        let apiError = APIError(message: message)
+        dispatchOnCallbackQueue(failure(apiError))
       } catch let DecodingError.valueNotFound(value, context) {
-        print("Value '\(value)' not found: \(context.debugDescription)")
-        print("codingPath:", context.codingPath)
+        var message = "Value '\(value)' not found: \(context.debugDescription) \n"
+        message += "codingPath: \(context.codingPath)"
+        let apiError = APIError(message: message)
+        dispatchOnCallbackQueue(failure(apiError))
       } catch let DecodingError.typeMismatch(type, context) {
         var message = "Type '\(type)' mismatch: \(context.debugDescription) \n"
         message += "codingPath: \(context.codingPath)"

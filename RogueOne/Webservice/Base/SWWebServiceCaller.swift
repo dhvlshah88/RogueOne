@@ -17,7 +17,7 @@ class SWWebServiceCaller {
     return urlSession
   }()
 
-  private var dataTask: URLSessionDataTask?
+  private(set) var dataTask: URLSessionDataTask?
 
   static func dataResponseSerializer() -> ResponseSerializer<Data> {
     return ResponseSerializer { data, response, error in
