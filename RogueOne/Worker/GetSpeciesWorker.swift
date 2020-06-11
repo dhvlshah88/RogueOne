@@ -10,19 +10,22 @@ import Foundation
 
 class GetSpeciesWorker: Fetchable {
   lazy var speciesWebservice = GetSpeciesEntitiesWebService.default()
-
+  
   func getEntities(for type: SWEntityType,
                    success: @escaping SWEntitiesResponseClosure,
                    failure: @escaping FailureClosure) {
     let request = SWEntitiesRequest(type: type)
     speciesWebservice.call(request: request,
-                           success: { (response) in
-                            success(response)
-    },
+                           success: success,
                            failure: failure)
   }
-
-  func getNextEntities(for urlString: String, success: @escaping SWEntitiesResponseClosure, failure: @escaping FailureClosure) {
-    
+  
+  func getNextEntities(for urlString: String,
+                       success: @escaping SWEntitiesResponseClosure,
+                       failure: @escaping FailureClosure) {
+    let request = SWEntitiesRequest(urlString)
+    speciesWebservice.call(request: request,
+                           success: success,
+                           failure: failure)
   }
 }

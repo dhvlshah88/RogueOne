@@ -16,13 +16,16 @@ class GetVehiclesWorker: Fetchable {
                    failure: @escaping FailureClosure) {
     let request = SWEntitiesRequest(type: type)
     vehiclesWebservice.call(request: request,
-                            success: { (response) in
-                              success(response)
-    },
+                            success: success,
                             failure: failure)
   }
 
-  func getNextEntities(for urlString: String, success: @escaping SWEntitiesResponseClosure, failure: @escaping FailureClosure) {
-
+  func getNextEntities(for urlString: String,
+                       success: @escaping SWEntitiesResponseClosure,
+                       failure: @escaping FailureClosure) {
+    let request = SWEntitiesRequest(urlString)
+    vehiclesWebservice.call(request: request,
+                           success: success,
+                           failure: failure)
   }
 }

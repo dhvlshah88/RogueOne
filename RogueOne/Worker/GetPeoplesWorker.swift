@@ -26,9 +26,7 @@ class GetPeoplesWorker: Fetchable {
                    failure: @escaping FailureClosure) {
     let request = SWEntitiesRequest(type: type)
     peoplesWebservice.call(request: request,
-                           success: { response in
-                            success(response)
-    },
+                           success: success,
                            failure: failure)
   }
 
@@ -37,9 +35,7 @@ class GetPeoplesWorker: Fetchable {
                        failure: @escaping FailureClosure) {
     let request = SWEntitiesRequest(urlString)
     peoplesWebservice.call(request: request,
-                           success: { response in
-                            success(response)
-    },
+                           success: success,
                            failure: failure)
   }
 }
