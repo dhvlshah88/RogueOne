@@ -35,6 +35,7 @@ import Foundation
 //}
 
 protocol ViewModel {
+  var imageString: String { get }
   var title: String { get }
   var body: [String] { get }
   var relatedViewModelPerEntityType: [SWEntityType: [RelatedEntityViewModel]] { get }
@@ -52,6 +53,13 @@ struct PeopleViewModel: ViewModel {
 }
 
 extension PeopleViewModel {
+
+  var imageString: String {
+    let urlComponents = people.url.split(separator: "/").filter ({ !$0.isEmpty })
+    guard let imageIndex = urlComponents.last else { return "" }
+    return "people-\(imageIndex)"
+  }
+
   var title: String {
     return people.name
   }
