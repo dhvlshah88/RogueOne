@@ -19,3 +19,11 @@ typealias BoolClosure = (Bool) -> Void
 typealias VoidClosure = () -> Void
 typealias SWEntitiesResponseClosure = (SWEntitiesResponse) -> Void
 typealias EntitiesClosure = (Entities?) -> Void
+
+
+func configure<T>(_ value: T,
+                  _ closure: (inout T) throws -> Void) rethrows -> T {
+  var value = value
+  try closure(&value)
+  return value
+}
