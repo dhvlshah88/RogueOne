@@ -1,75 +1,109 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="STJEDISE.TTF">
-            <string>StarJediSpecialEdition</string>
+        <array key="Strjmono.ttf">
+            <string>StarJediLogoMonoLine</string>
         </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SWDetailsViewController" customModule="RogueOne" customModuleProvider="target">
             <connections>
-                <outlet property="bodyStackView" destination="nu0-es-nfx" id="fbq-qI-wmU"/>
-                <outlet property="relatedEntitiesStackView" destination="tm2-Rd-Afj" id="2Wc-sn-WKN"/>
-                <outlet property="titleLabel" destination="TpM-Rk-6GJ" id="4G9-27-g9W"/>
+                <outlet property="entityImageView" destination="R2v-9p-uOZ" id="TOo-oM-5NP"/>
+                <outlet property="relationCollectionView" destination="Pga-LW-OhR" id="gZA-i4-x4a"/>
+                <outlet property="titleLabel" destination="s1B-M0-uSG" id="rze-he-erN"/>
                 <outlet property="view" destination="ZXC-x1-K5a" id="cpR-gz-GOW"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="ZXC-x1-K5a">
+        <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZXC-x1-K5a">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TpM-Rk-6GJ">
-                    <rect key="frame" x="16" y="68" width="382" height="48"/>
-                    <fontDescription key="fontDescription" name="StarJediSpecialEdition" family="StarJedi Special Edition" pointSize="30"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="nu0-es-nfx">
-                    <rect key="frame" x="16" y="140" width="382" height="400"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="400" id="hBf-Zu-uDw"/>
-                    </constraints>
-                </stackView>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3H4-00-Uag">
-                    <rect key="frame" x="0.0" y="540" width="414" height="356"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ksl-If-m5s">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                     <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="equalSpacing" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="tm2-Rd-Afj">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="312.5"/>
-                        </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7te-Xx-YtJ" userLabel="Image Container View">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="290"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R2v-9p-uOZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="290"/>
+                                </imageView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="R2v-9p-uOZ" firstAttribute="height" relation="greaterThanOrEqual" secondItem="7te-Xx-YtJ" secondAttribute="height" id="YFC-6u-nbc"/>
+                                <constraint firstAttribute="trailing" secondItem="R2v-9p-uOZ" secondAttribute="trailing" id="fCv-ju-cWq"/>
+                                <constraint firstAttribute="bottom" secondItem="R2v-9p-uOZ" secondAttribute="bottom" id="fxe-oS-G8d"/>
+                                <constraint firstItem="R2v-9p-uOZ" firstAttribute="leading" secondItem="7te-Xx-YtJ" secondAttribute="leading" id="tjj-HR-6dH"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kJm-LA-UUX" userLabel="Text Container View">
+                            <rect key="frame" x="0.0" y="290" width="414" height="606"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s1B-M0-uSG">
+                                    <rect key="frame" x="16" y="16" width="382" height="24.5"/>
+                                    <fontDescription key="fontDescription" name="StarJediLogoMonoLine" family="Star Jedi Logo MonoLine" pointSize="21"/>
+                                    <color key="textColor" name="primaryText"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="Pga-LW-OhR">
+                                    <rect key="frame" x="0.0" y="406" width="414" height="200"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="200" id="621-1y-L0x"/>
+                                    </constraints>
+                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Vsb-O8-HhE">
+                                        <size key="itemSize" width="128" height="128"/>
+                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                    </collectionViewFlowLayout>
+                                </collectionView>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="Pga-LW-OhR" firstAttribute="leading" secondItem="kJm-LA-UUX" secondAttribute="leading" id="4Rm-14-lHC"/>
+                                <constraint firstAttribute="trailing" secondItem="Pga-LW-OhR" secondAttribute="trailing" id="Fo0-oa-S1V"/>
+                                <constraint firstItem="s1B-M0-uSG" firstAttribute="top" secondItem="kJm-LA-UUX" secondAttribute="top" constant="16" id="JxR-B4-KpZ"/>
+                                <constraint firstAttribute="trailing" secondItem="s1B-M0-uSG" secondAttribute="trailing" constant="16" id="Tmg-78-ma8"/>
+                                <constraint firstItem="s1B-M0-uSG" firstAttribute="leading" secondItem="kJm-LA-UUX" secondAttribute="leading" constant="16" id="hwd-6s-yX1"/>
+                                <constraint firstAttribute="bottom" secondItem="Pga-LW-OhR" secondAttribute="bottom" id="y1o-t5-Ux8"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="tm2-Rd-Afj" secondAttribute="bottom" id="G3Q-Eb-15c"/>
-                        <constraint firstItem="tm2-Rd-Afj" firstAttribute="height" secondItem="3H4-00-Uag" secondAttribute="height" multiplier="0.877193" id="KMa-f3-bEg"/>
-                        <constraint firstAttribute="trailing" secondItem="tm2-Rd-Afj" secondAttribute="trailing" id="hFF-Mj-Gyg"/>
-                        <constraint firstItem="tm2-Rd-Afj" firstAttribute="leading" secondItem="3H4-00-Uag" secondAttribute="leading" id="iFx-cR-85q"/>
-                        <constraint firstItem="tm2-Rd-Afj" firstAttribute="top" secondItem="3H4-00-Uag" secondAttribute="top" id="tnB-1A-hAE"/>
+                        <constraint firstItem="7te-Xx-YtJ" firstAttribute="top" secondItem="Ksl-If-m5s" secondAttribute="top" id="1Xv-FP-B9m"/>
+                        <constraint firstItem="7te-Xx-YtJ" firstAttribute="leading" secondItem="Ksl-If-m5s" secondAttribute="leading" id="3wd-V0-LNr"/>
+                        <constraint firstItem="7te-Xx-YtJ" firstAttribute="leading" secondItem="kJm-LA-UUX" secondAttribute="leading" id="Sv3-4w-Zh9"/>
+                        <constraint firstItem="kJm-LA-UUX" firstAttribute="top" secondItem="7te-Xx-YtJ" secondAttribute="bottom" id="Ttd-v9-UGt"/>
+                        <constraint firstItem="7te-Xx-YtJ" firstAttribute="centerX" secondItem="Ksl-If-m5s" secondAttribute="centerX" id="Vl8-LT-c1l"/>
+                        <constraint firstItem="kJm-LA-UUX" firstAttribute="centerX" secondItem="Ksl-If-m5s" secondAttribute="centerX" id="ccu-oB-0yh"/>
+                        <constraint firstItem="7te-Xx-YtJ" firstAttribute="trailing" secondItem="kJm-LA-UUX" secondAttribute="trailing" id="ext-tm-gcS"/>
+                        <constraint firstAttribute="trailing" secondItem="7te-Xx-YtJ" secondAttribute="trailing" id="qFr-rD-LjL"/>
                     </constraints>
-                    <viewLayoutGuide key="contentLayoutGuide" id="Bt5-eQ-Znf"/>
-                    <viewLayoutGuide key="frameLayoutGuide" id="I69-j6-iD9"/>
                 </scrollView>
             </subviews>
             <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="TpM-Rk-6GJ" firstAttribute="top" secondItem="eBR-MQ-1Hq" secondAttribute="top" constant="24" id="2hL-dK-eXQ"/>
-                <constraint firstItem="nu0-es-nfx" firstAttribute="top" secondItem="TpM-Rk-6GJ" secondAttribute="bottom" constant="24" id="EhD-eC-moY"/>
-                <constraint firstItem="TpM-Rk-6GJ" firstAttribute="leading" secondItem="eBR-MQ-1Hq" secondAttribute="leading" constant="16" id="IQE-gG-BfD"/>
-                <constraint firstItem="eBR-MQ-1Hq" firstAttribute="trailing" secondItem="TpM-Rk-6GJ" secondAttribute="trailing" constant="16" id="RMg-BD-5xD"/>
-                <constraint firstItem="eBR-MQ-1Hq" firstAttribute="trailing" secondItem="nu0-es-nfx" secondAttribute="trailing" constant="16" id="iUl-Iy-Axg"/>
-                <constraint firstItem="3H4-00-Uag" firstAttribute="bottom" secondItem="eBR-MQ-1Hq" secondAttribute="bottom" constant="34" id="jBY-9r-1B9"/>
-                <constraint firstItem="3H4-00-Uag" firstAttribute="leading" secondItem="eBR-MQ-1Hq" secondAttribute="leading" id="lo1-65-t7A"/>
-                <constraint firstItem="nu0-es-nfx" firstAttribute="bottom" secondItem="3H4-00-Uag" secondAttribute="top" placeholder="YES" id="o0h-lq-FRR"/>
-                <constraint firstItem="eBR-MQ-1Hq" firstAttribute="trailing" secondItem="3H4-00-Uag" secondAttribute="trailing" id="rvG-6Y-eKE"/>
-                <constraint firstItem="nu0-es-nfx" firstAttribute="leading" secondItem="eBR-MQ-1Hq" secondAttribute="leading" constant="16" id="wqD-l5-q6H"/>
+                <constraint firstItem="Ksl-If-m5s" firstAttribute="top" secondItem="ZXC-x1-K5a" secondAttribute="top" id="5fK-Jc-bF6"/>
+                <constraint firstItem="Ksl-If-m5s" firstAttribute="leading" secondItem="ZXC-x1-K5a" secondAttribute="leading" id="91u-l5-A0P"/>
+                <constraint firstAttribute="bottom" secondItem="kJm-LA-UUX" secondAttribute="bottom" id="9Je-v1-Var"/>
+                <constraint firstItem="R2v-9p-uOZ" firstAttribute="top" secondItem="ZXC-x1-K5a" secondAttribute="top" id="Hlv-3P-zLH"/>
+                <constraint firstAttribute="bottom" secondItem="Ksl-If-m5s" secondAttribute="bottom" id="Ou8-YZ-fx3"/>
+                <constraint firstAttribute="trailing" secondItem="Ksl-If-m5s" secondAttribute="trailing" id="gxA-OP-tvz"/>
+                <constraint firstItem="7te-Xx-YtJ" firstAttribute="height" secondItem="ZXC-x1-K5a" secondAttribute="width" multiplier="0.7" id="t7a-9n-Vz0"/>
             </constraints>
-            <viewLayoutGuide key="safeArea" id="eBR-MQ-1Hq"/>
             <point key="canvasLocation" x="186" y="366"/>
         </view>
     </objects>
+    <resources>
+        <namedColor name="primaryText">
+            <color red="0.10599999874830246" green="0.14100000262260437" blue="0.19599999487400055" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

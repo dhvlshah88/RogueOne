@@ -9,9 +9,11 @@ import UIKit
 class SWDetailsViewController: UIViewController {
   private var viewModel: ViewModel?
 
+  @IBOutlet weak var entityImageView: UIImageView!
   @IBOutlet weak var titleLabel: UILabel!
   @IBOutlet weak var bodyStackView: UIStackView!
   @IBOutlet weak var relatedEntitiesStackView: UIStackView!
+  @IBOutlet weak var relationCollectionView: UICollectionView!
 
   init(viewModel: ViewModel) {
     self.viewModel = viewModel
@@ -27,9 +29,10 @@ class SWDetailsViewController: UIViewController {
 
     view.backgroundColor = UIColor.random()
     guard let viewModel = viewModel else { return }
+    entityImageView.image = UIImage(named: viewModel.imageString)
     titleLabel.text = viewModel.title
-    configureBodyStackView(viewModel)
-    configureRelatedEntitiesStackView(viewModel)
+//    configureBodyStackView(viewModel)
+//    configureRelatedEntitiesStackView(viewModel)
   }
 
   private func configureBodyStackView(_ viewModel: ViewModel) {
