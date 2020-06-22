@@ -9,8 +9,8 @@
 import Foundation
 
 // MARK: - Film
-class Film: SWEntity {
-  let title: String
+class Film: NSObject, SWEntity {
+  @objc dynamic let title: String
   let episodeID: Int
   let openingCrawl, director, producer, releaseDate: String
   let characters, planets, starships, vehicles: [String?]

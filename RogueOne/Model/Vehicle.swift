@@ -9,8 +9,9 @@
 import Foundation
 
 // MARK: - Vehicle
-class Vehicle: SWEntity {
-  let name, model, manufacturer, costInCredits: String
+class Vehicle: NSObject, SWEntity {
+  @objc dynamic let name: String
+  let model, manufacturer, costInCredits: String
   let length, maxAtmospheringSpeed, crew, passengers: String
   let cargoCapacity, consumables, vehicleClass: String
   let pilots: [String?]

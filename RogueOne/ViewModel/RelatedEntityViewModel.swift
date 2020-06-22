@@ -22,8 +22,8 @@ struct RelatedEntityViewModel {
 
 extension RelatedEntityViewModel {
   var title: String {
-    guard let model = entityModel else { return "Unknown" }
-    return model.entityName
+    guard let entity = entity else { return "Unknown" }
+    return entity.entityName
   }
 
   var imageName: String {
@@ -36,7 +36,7 @@ extension RelatedEntityViewModel {
     return "\(entityType.singularValue)-\(last)"
   }
 
-  var entityModel: SWEntity? {
+  var entity: SWEntity? {
     return cacheManager.getEntityLocally(url: url, type: entityType)
   }
 }

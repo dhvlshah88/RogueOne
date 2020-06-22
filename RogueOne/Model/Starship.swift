@@ -9,8 +9,9 @@
 import Foundation
 
 // MARK: - Starship
-class Starship: SWEntity {
-  let name, model, manufacturer, costInCredits: String
+class Starship: NSObject, SWEntity {
+  @objc dynamic let name: String
+  let model, manufacturer, costInCredits: String
   let length, maxAtmospheringSpeed, crew, passengers: String
   let cargoCapacity, consumables, hyperdriveRating, mglt: String
   let starshipClass: String

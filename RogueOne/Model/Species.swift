@@ -9,10 +9,11 @@
 import Foundation
 
 // MARK: - Species
-class Species: SWEntity {
-  let name, classification, designation, averageHeight: String
+class Species: NSObject, SWEntity {
+  @objc dynamic let name: String
+  let classification, designation, averageHeight: String
   let skinColors, hairColors, eyeColors, averageLifespan: String
-  let homeworld: String
+  let homeworld: String?
   let language: String
   let people, films: [String?]
   let created, edited: String

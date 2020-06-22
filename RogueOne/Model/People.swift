@@ -9,8 +9,9 @@
 import Foundation
 
 // MARK: - People
-class People: SWEntity {
-  let name, height, mass, hairColor: String
+class People: NSObject, SWEntity {
+  @objc dynamic let name: String
+  let height, mass, hairColor: String
   let skinColor, eyeColor, birthYear, gender: String
   let homeworld: String
   let films, species, vehicles, starships: [String]
