@@ -9,7 +9,7 @@ import Network
 
 class SWWebServiceCaller {
   
-  typealias WebServiceCallerCompletion = (_ result: WebServiceResult<Data>) -> Void
+  typealias WebServiceCallerCompletion = (_ result: Result<Data, Error>) -> Void
   
   private let session: URLSession
   

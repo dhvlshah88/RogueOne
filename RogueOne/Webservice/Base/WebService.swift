@@ -27,10 +27,15 @@ class WebService<Request: AnyObject, Response: AnyObject> {
     return self.init(configuration: WebServiceConfiguration.default())
   }
 
+  func url(with request: Request) -> URL {
+    return url
+  }
+
   func urlRequest(with request: Request) -> URLRequest {
     var urlRequest = URLRequest(url: url)
     urlRequest.httpMethod = httpMethod.rawValue
-    urlRequest.setValue(HTTP.HeaderValue.applicationJSON, forHTTPHeaderField: HTTP.HeaderName.contentType)
+    urlRequest.setValue(HTTP.HeaderValue.applicationJSON,
+                        forHTTPHeaderField: HTTP.HeaderName.contentType)
 
     if httpMethod != .get {
       urlRequest.httpBody = httpBody(with: request)
@@ -52,11 +57,12 @@ class WebService<Request: AnyObject, Response: AnyObject> {
             queue: DispatchQueue? = nil) {
     cancel()
 
-    let urlRequest = self.urlRequest(with: request)
+    let url = self.url(with: request)
+    let urlRequest = URLRequest(url: url)
 
     configuration.caller.start(
       request: urlRequest,
-      queue: queue ?? configuration.processingQueue) { [weak self] (result: WebServiceResult<Data>) in
+      queue: queue ?? configuration.processingQueue) { [weak self] result in
         self?.process(result,
                       success: success,
                       failure: failure)
@@ -67,7 +73,7 @@ class WebService<Request: AnyObject, Response: AnyObject> {
     configuration.caller.dataTask?.cancel()
   }
 
-  private func process(_ result: WebServiceResult<Data>,
+  private func process(_ result: Result<Data, Error>,
                        success: @escaping SuccessClosure,
                        failure: @escaping FailureClosure) {
     switch result {

@@ -22,15 +22,15 @@ class SWEntitiesRequest: Request {
 }
 
 class SWCategoriesWebService<Request: AnyObject, Response: AnyObject>: WebService<SWEntitiesRequest, Response> {
-  override func urlRequest(with request: SWEntitiesRequest) -> URLRequest {
+  override func url(with request: SWEntitiesRequest) -> URL {
     if let type = request.type {
-      return URLRequest(url: configuration.baseURL.appendingPathComponent(type.rawValue))
+      return url.appendingPathComponent(type.rawValue)
     }
 
     if let nextPageUrl = request.nextPageUrl {
-      return URLRequest(url: nextPageUrl)
+      return nextPageUrl
     }
 
-    return URLRequest(url: configuration.baseURL)
+    return url
   }
 }
