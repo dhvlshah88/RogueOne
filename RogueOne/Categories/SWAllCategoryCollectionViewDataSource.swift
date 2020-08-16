@@ -7,10 +7,11 @@
 import UIKit
 
 protocol SWAllCategoryCollectionViewDataSourceDelegate: class {
-  func presentSelectedCategoryViewController(_ categoryType: SWEntityType)
+  func presentSelectedCategoryViewController(_ categoryType: SWEntityType, _ selectedCell: SWCategoryCollectionViewCell)
 }
 
 class SWAllCategoryCollectionViewDataSource: NSObject, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+  
   private let sectionInsets = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
   private let itemSpacing: CGFloat = 10.0
 
@@ -26,16 +27,20 @@ class SWAllCategoryCollectionViewDataSource: NSObject, UICollectionViewDataSourc
   }
 
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-    guard let swEntityCell = collectionView.dequeueReusableCell(withReuseIdentifier: SWCategoryCollectionViewCell.reuseIdentifier, for: indexPath) as? SWCategoryCollectionViewCell else {
+    guard let swEntityCell = collectionView.dequeueReusableCell(withReuseIdentifier: SWCategoryCollectionViewCell.reuseIdentifier,
+                                                                for: indexPath) as? SWCategoryCollectionViewCell else {
       return UICollectionViewCell()
     }
+
     let category = swCategories[indexPath.row]
     swEntityCell.configureTitle(category.rawValue)
     return swEntityCell
   }
 
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    delegate?.presentSelectedCategoryViewController(swCategories[indexPath.row])
+    guard let cell = collectionView.cellForItem(at: indexPath) as? SWCategoryCollectionViewCell else { return }
+    delegate?.presentSelectedCategoryViewController(swCategories[indexPath.row], cell)
+    collectionView.deselectItem(at: indexPath, animated: true)
   }
 
   // MARK: UICollectionViewDelegateFlowLayout
@@ -46,6 +51,7 @@ class SWAllCategoryCollectionViewDataSource: NSObject, UICollectionViewDataSourc
     let totalWidthForCells = collectionView.bounds.width
       - (flowLayout.minimumInteritemSpacing * CGFloat(numberOfItems - 1))
       - (sectionInsets.left + sectionInsets.right)
+      - (collectionView.safeAreaInsets.left + collectionView.safeAreaInsets.right)
 
     let widthPerCell = totalWidthForCells / CGFloat(numberOfItems)
     return CGSize(width: widthPerCell, height: widthPerCell)
