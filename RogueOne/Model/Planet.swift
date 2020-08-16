@@ -9,7 +9,7 @@
 import Foundation
 
 // MARK: - Planet
-class Planet: SWEntity {
+class Planet: NSObject, SWEntity {
   let name, rotationPeriod, orbitalPeriod, diameter: String
   let climate, gravity, terrain, surfaceWater: String
   let population: String
