@@ -11,6 +11,8 @@ class SWAllCategoryCollectionViewController: UICollectionViewController {
   private var swEntitiesCollectionViewController: SWEntitiesCollectionViewController?
   private lazy var cacheManager = CacheManager()
 
+  private var selectedCell: SWCategoryCollectionViewCell?
+
   override func viewDidLoad() {
     super.viewDidLoad()
     title = "Star Wars Category"
@@ -18,7 +20,10 @@ class SWAllCategoryCollectionViewController: UICollectionViewController {
                                                        style: .plain,
                                                        target: nil,
                                                        action: nil)
-    navigationItem.backBarButtonItem?.tintColor = #colorLiteral(red: 0.1058823529, green: 0.1411764706, blue: 0.1960784314, alpha: 0.9)
+    navigationItem.backBarButtonItem?.tintColor =  #colorLiteral(red: 0.1058823529, green: 0.1411764706, blue: 0.1960784314, alpha: 0.9)
+    navigationController?.navigationBar.barTintColor = .clear
+    navigationController?.navigationBar.prefersLargeTitles = true
+    navigationController?.delegate = self
     configureCollectionView()
   }
 
@@ -26,7 +31,7 @@ class SWAllCategoryCollectionViewController: UICollectionViewController {
     collectionView.delegate = swCategoriesCollectionDataSource
     collectionView.dataSource = swCategoriesCollectionDataSource
     collectionView.collectionViewLayout = UICollectionViewFlowLayout()
-    collectionView.backgroundColor = .lightGray
+    collectionView.backgroundColor = .white
 
     let cellNib = UINib(nibName: SWCategoryCollectionViewCell.reuseIdentifier, bundle: nil)
     collectionView.register(cellNib, forCellWithReuseIdentifier: SWCategoryCollectionViewCell.reuseIdentifier)
