@@ -78,7 +78,6 @@ class WebService<Request: AnyObject, Response: AnyObject> {
                        failure: @escaping FailureClosure) {
     switch result {
     case .failure(let error):
-      print(String(describing: error.localizedDescription))
       let apiError = APIError(message: error.localizedDescription)
       dispatchOnCallbackQueue(failure(apiError))
     case .success(let data):
